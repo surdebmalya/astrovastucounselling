@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Vastu Counselling</title>
+    <link rel="icon" href="./static/logo.jpg" type="image/jpeg">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="description"
+        content="We are on a mission to solve your life problems and provide you the best life. We don't predict, we calculate mathematically.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://astrovastucounselling.netlify.app/">
+    <meta property="og:title" content="Welcome to Astro Vastu Counselling">
+    <meta property="og:description"
+        content="We are on a mission to solve your life problems and provide you the best life. We don't predict, we calculate mathematically.">
+    <meta property="og:image" content="https://astrovastucounselling.netlify.app/static/logo.jpg">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar-menu {
+            display: none;
+            /* Hide menu by default for mobile devices */
+        }
+
+        .navbar-menu.active {
+            display: block;
+            /* Show menu when active */
+        }
+
+        @media (min-width: 769px) {
+            .navbar-menu {
+                display: flex;
+                /* Show menu for larger screens */
+                flex-direction: row;
+                /* Horizontal layout for larger screens */
+            }
+
+            .navbar-burger {
+                display: none;
+                /* Hide burger icon for larger screens */
+            }
+
+            .navbar-item {
+                display: block;
+                color: white;
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                /* Hide menu by default for mobile devices */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #c53030;
+                /* Tailwind's red-700 */
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+            }
+
+            .navbar-item {
+                display: block;
+                margin-bottom: 1rem;
+                color: white;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .navbar-burger {
+                display: block;
+                /* Show burger icon for mobile devices */
+            }
+        }
+
+        .advertisement-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            background-color: #f8f8f8;
+            /* Optional: Background color for the ad section */
+            padding: 0;
+        }
+
+        .advertisement-wrapper {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left 10s linear infinite;
+        }
+
+        .advertisement-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+        .advertisement-item {
+            display: inline-block;
+            margin-right: 0px;
+            /* Adjust space between ads */
+        }
+
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-red-700 shadow-md relative">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-white">Astro Vastu Counselling</h1>
+            <div class="navbar-burger cursor-pointer text-white">
+                <i class="fas fa-bars fa-2x"></i>
+            </div>
+            <nav class="navbar-menu space-y-4 md:space-x-4 md:space-y-0 md:flex md:items-center">
+                <a href="https://facebook.com/official.AstroVastuCounselling/"
+                    class="navbar-item hover:text-red-300">Visit our Facebook Page</a>
+                <a href="tel:6289849972" class="navbar-item hover:text-red-300">Call Us Now!</a>
+                <a href="https://wa.me/6289849972" class="navbar-item hover:text-red-300">Chat in WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Consultant -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+            <h2 class="text-3xl font-bold text-red-700 mb-8">Meet Our Consultant</h2>
+            <img src="./static/profile.jpg" alt="Mrs. Dipanwita Biswas Sur Profile Picture"
+                class="w-40 h-40 rounded-full mb-4 shadow-lg">
+            <p class="text-2xl text-red-700 mb-4">
+                Mrs. Dipanwita Biswas Sur
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+            </p>
+
+            <!-- Degree Tags -->
+            <p class="text-gray-800 font-bold text-center max-w-2xl mb-4">
+                B.Sc (Math Hons), M.Sc (Math), B.Ed, B.Lib.Sc, Jyotish Praveena, Jyotish Acharya, Vastu Praveena, Vastu Acharya
+            </p>
+
+            <p class="text-gray-800 text-center text-justify max-w-2xl mb-4">
+                Mrs. Dipanwita Biswas Sur brings over 6+ years of expertise in Astrology and Vastu Consultancy.
+                As a certified tarot reader and numerologist, she offers a unique blend of skills to her clients.
+                She is a life member of the Indian Council of Astrological Sciences (ICAS) registered in Chennai.
+                Her academic background is impressive, holding a Master of Science in Mathematics, a Bachelor of
+                Science with honours in Mathematics, a Bachelor of Education and a Bachelor of Library Science. Her
+                extensive knowledge and dedication
+                to her craft have made her a trusted consultant for those seeking guidance in life and career decisions.
+                Mrs. Sur's holistic approach integrates her academic achievements with her astrological and
+                numerological insights, providing clients with personalized and insightful advice.
+            </p>
+
+            <div class="flex justify-center items-center space-x-4">
+                <a href="https://facebook.com/official.AstroVastuCounselling/"
+                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
+                    Follow Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-red-700 mb-4">Our Mission</h2>
+            <p class="text-gray-800 mb-4">
+                We are on a mission to provide solutions of your life problems and guide you the best life direction.
+                We predict mathematically and scientifically.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-red-700 mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Service Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-star text-red-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Numerology Insights</h3>
+                    <p class="text-gray-800">
+                        Discover the hidden meanings of numbers and how they influence your life path. Unveil the
+                        mysteries of numerology and empower yourself with knowledge!
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-child text-red-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Tarot Card Reading</h3>
+                    <p class="text-gray-800">
+                        Discover insights and guidance with our expert Tarot Card Reading. Gain clarity on your life's
+                        journey and explore new possibilities!
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-gem text-red-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Crystal Healing</h3>
+                    <p class="text-gray-800">
+                        Experience the transformative power of crystal healing to enhance your well-being and restore
+                        balance in your life. Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-briefcase text-red-700 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Career Counseling</h3>
+                    <p class="text-gray-800">
+                        Unlock your true potential with personalized career guidance and chart your path to success!
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-heart text-red-700 text-3xl mr-4"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Match-making (Marriage)</h3>
+                    <p class="text-gray-800">
+                        Find your perfect match with our tailored match-making services — where love meets destiny!
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-life-ring text-red-700 text-3xl mr-4"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Life-related Issues</h3>
+                    <p class="text-gray-800">
+                        Navigate life's challenges with clarity and confidence — our expert guidance for life-related
+                        issues makes every decision easier.
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-red-700 text-3xl mr-4"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Birth Chart Analysis</h3>
+                    <p class="text-gray-800">
+                        Unlock the secrets of your destiny with personalized Birth Chart Analysis — your cosmic
+                        blueprint
+                        to a more enlightened life.
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-home text-red-700 text-3xl mr-4"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Vastu Consultancy</h3>
+                    <p class="text-gray-800">
+                        Unlock harmony and prosperity in your space with our expert Vastu Consultancy — where ancient
+                        wisdom meets modern living!
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-phone text-red-700 text-3xl mr-4"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-4">Phone Number Correction</h3>
+                    <p class="text-gray-800">
+                        Perfect your contact details with our precise Phone Number Digit Correction service — ensure
+                        you’re
+                        never out of touch!
+                        Available in both online and offline modes.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="flex justify-center items-center space-x-4">
+            <a href="tel:6289849972"
+                class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                Now</a>
+            <a href="https://wa.me/6289849972"
+                class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                Now</a>
+        </div>
+    </section>
+
+    <!-- Our Courses Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <!-- Section Heading -->
+            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Our Courses</h2>
+            <!-- Course Rows -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- First Course Set -->
+                <div>
+                    <!-- Course Heading -->
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Tarot Card Reading</h3>
+                    <!-- Course Posters and Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <img src="./static/courses/tarot-card/course1.png" alt="Course 1"
+                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
+                            <div class="space-x-4">
+                                <a href="tel:6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                                    Now</a>
+                                <a href="https://wa.me/6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second Course Set -->
+                <div>
+                    <!-- Course Heading -->
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Numerology</h3>
+                    <!-- Course Posters and Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <img src="./static/courses/numerology/course1.png" alt="Course 1"
+                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
+                            <div class="space-x-4">
+                                <a href="tel:6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                                    Now</a>
+                                <a href="https://wa.me/6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                                    Now</a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="./static/courses/numerology/course2.png" alt="Course 2"
+                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
+                            <div class="space-x-4">
+                                <a href="tel:6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                                    Now</a>
+                                <a href="https://wa.me/6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- First Course Set -->
+                <div>
+                    <!-- Course Heading -->
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Crystal</h3>
+                    <!-- Course Posters and Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <img src="./static/courses/crystal/course1.png" alt="Course 1"
+                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
+                            <div class="space-x-4">
+                                <a href="tel:6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                                    Now</a>
+                                <a href="https://wa.me/6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                                    Now</a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="./static/courses/crystal/course2.png" alt="Course 2"
+                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
+                            <div class="space-x-4">
+                                <a href="tel:6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                                    Now</a>
+                                <a href="https://wa.me/6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second Course Set -->
+                <div>
+                    <!-- Course Heading -->
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Vastu</h3>
+                    <!-- Course Posters and Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <img src="./static/courses/vastu/course1.png" alt="Course 1"
+                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
+                            <div class="space-x-4">
+                                <a href="tel:6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                                    Now</a>
+                                <a href="https://wa.me/6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                                    Now</a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="./static/courses/vastu/course2.png" alt="Course 2"
+                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
+                            <div class="space-x-4">
+                                <a href="tel:6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                                    Now</a>
+                                <a href="https://wa.me/6289849972"
+                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold text-red-700 mb-4">Trusted by Over 600+ Clients</h3>
+            <p class="text-gray-800 text-lg mb-4">Join a growing community that relies on our expertise for genuine and
+                reliable insights.</p>
+        </div>
+    </section>
+
+    <!-- Advertisement Section -->
+    <section class="advertisement-container">
+        <div class="advertisement-wrapper">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="./static/ad.png" alt="Advertisement" class="advertisement-item">
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-red-700 mb-8">Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Testimonial Card -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200">
+                    <p class="text-gray-800 mb-4">
+                        "Astro Vastu Counselling changed my life! Their insights and guidance were spot on."
+                    </p>
+                    <div class="text-center mb-4">
+                        <!-- Name -->
+                        <span class="block text-red-700 font-semibold mb-2">- Rupali Chatterjee</span>
+                        <!-- 5 Star Rating -->
+                        <div class="flex justify-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200">
+                    <p class="text-gray-800 mb-4">"Thanks to their advice, I found peace and success in my career!"</p>
+                    <div class="text-center mb-4">
+                        <!-- Name -->
+                        <span class="block text-red-700 font-semibold mb-2">- Arindam Banerjee</span>
+                        <!-- 5 Star Rating -->
+                        <div class="flex justify-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200">
+                    <p class="text-gray-800 mb-4">"Professional and accurate. I highly recommend their services!"</p>
+                    <div class="text-center mb-4">
+                        <!-- Name -->
+                        <span class="block text-red-700 font-semibold mb-2">- Madhumita Dasgupta</span>
+                        <!-- 5 Star Rating -->
+                        <div class="flex justify-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Card with Video and Text -->
+            <div
+                class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 flex flex-col md:flex-row items-center">
+                <!-- Text Section -->
+                <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-6">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4">Check What People Say About Us</h3>
+                    <p class="text-gray-800 mb-4">Discover more about our clients' experiences and how our services have
+                        made
+                        a difference in their lives. Watch the video to see real testimonials and feedback.</p>
+
+                    <!-- Contact Section -->
+                    <div class="flex justify-center items-center space-x-4">
+                        <a href="tel:6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                            Now</a>
+                        <a href="https://wa.me/6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                            Now</a>
+                    </div>
+                </div>
+                <!-- Video Section -->
+                <div class="flex-1">
+                    <video controls class="w-full h-auto rounded-lg">
+                        <source src="./static/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-red-700 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Astro Vastu Counselling. All rights reserved.</p>
+            <p>Website developed by: <a href="https://surdebmalya.github.io/services.html" target="_blank"
+                    class="text-white underline">Debmalya Sur</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.querySelector('.navbar-menu');
+
+            if (window.innerWidth <= 768) {
+                burger.addEventListener('click', function () {
+                    menu.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function (event) {
+                    if (!menu.contains(event.target) && !burger.contains(event.target)) {
+                        menu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
