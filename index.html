@@ -9,14 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <meta name="description"
-        content="Trusted by Over 600+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
+    <meta name="description" content="Trusted by Over 600+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
         We predict mathematically and scientifically.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://astrovastucounselling.com/">
     <meta property="og:title" content="Welcome to Astro Vastu Counselling">
-    <meta property="og:description"
-        content="Trusted by Over 600+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
+    <meta property="og:description" content="Trusted by Over 600+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
         We predict mathematically and scientifically.">
     <meta property="og:image" content="https://astrovastucounselling.com/static/promo/logo.jpg">
 
@@ -119,6 +117,37 @@
                 transform: translateX(-50%);
             }
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #c53030;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top i {
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -136,6 +165,7 @@
                     class="navbar-item hover:text-red-300">Visit our Facebook Page</a>
                 <a href="tel:6289849972" class="navbar-item hover:text-red-300">Call Us Now!</a>
                 <a href="https://wa.me/6289849972" class="navbar-item hover:text-red-300">Chat in WhatsApp</a>
+                <a href="#contact" class="navbar-item hover:text-red-300">Contact Us</a>
             </nav>
         </div>
     </header>
@@ -153,7 +183,8 @@
 
             <!-- Degree Tags -->
             <p class="text-gray-800 font-bold text-center max-w-2xl mb-4">
-                B.Sc (Math Hons), M.Sc (Math), B.Ed, B.Lib.Sc, Jyotish Praveena, Jyotish Acharya, Vastu Praveena, Vastu Acharya
+                B.Sc (Math Hons), M.Sc (Math), B.Ed, B.Lib.Sc, Jyotish Praveena, Jyotish Acharya, Vastu Praveena, Vastu
+                Acharya
             </p>
 
             <p class="text-gray-800 text-center text-justify max-w-2xl mb-4">
@@ -525,10 +556,14 @@
             <h2 class="text-3xl font-bold text-red-700 mb-8">Testimonials</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
                 <!-- Testimonial Card -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <!-- Profile Picture -->
+                    <img src="./static/promo/testimonials/profile1.jpg" alt="Rupali Chatterjee Profile Picture" class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">               
+                    <!-- Testimonial Text -->
                     <p class="text-gray-800 mb-4">
                         "Astro Vastu Counselling changed my life! Their insights and guidance were spot on."
                     </p>
+                    <!-- Name and Rating -->
                     <div class="text-center mb-4">
                         <!-- Name -->
                         <span class="block text-red-700 font-semibold mb-2">- Rupali Chatterjee</span>
@@ -542,9 +577,15 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200">
-                    <p class="text-gray-800 mb-4">"Thanks to their advice, I found peace and success in my career!"</p>
+                
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <!-- Profile Picture -->
+                    <img src="./static/promo/testimonials/profile2.jpg" alt="Arindam Banerjee Profile Picture" class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">               
+                    <!-- Testimonial Text -->
+                    <p class="text-gray-800 mb-4">
+                        "Thanks to their advice, I found peace and success in my career!"
+                    </p>
+                    <!-- Name and Rating -->
                     <div class="text-center mb-4">
                         <!-- Name -->
                         <span class="block text-red-700 font-semibold mb-2">- Arindam Banerjee</span>
@@ -558,8 +599,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200">
-                    <p class="text-gray-800 mb-4">"Professional and accurate. I highly recommend their services!"</p>
+
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <!-- Profile Picture -->
+                    <img src="./static/promo/testimonials/profile3.jpg" alt="Madhumita Dasgupta Profile Picture" class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">               
+                    <!-- Testimonial Text -->
+                    <p class="text-gray-800 mb-4">
+                        "Professional and accurate. I highly recommend their services!"
+                    </p>
+                    <!-- Name and Rating -->
                     <div class="text-center mb-4">
                         <!-- Name -->
                         <span class="block text-red-700 font-semibold mb-2">- Madhumita Dasgupta</span>
@@ -606,6 +654,49 @@
         </div>
     </section>
 
+    <!-- Contact Us -->
+    <section class="py-8 bg-gray-100" id="contact">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Contact Us</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Contact Information -->
+                <div class="text-left md:text-left mb-8 md:mb-0 max-w-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h3>
+                    <p class="text-gray-700 mb-4">
+                        We are here to assist you with any inquiries or support you may need. Feel free to reach out
+                        through any of the following methods:
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fas fa-phone-alt text-red-700 mr-2"></i>
+                        Call Us: <strong>+91 62898 49972</strong>
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fab fa-whatsapp text-red-700 mr-2"></i>
+                        WhatsApp: <strong>+91 62898 49972</strong>
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fas fa-envelope text-red-700 mr-2"></i>
+                        Email: <strong>astrovastucounselling@gmail.com</strong>
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fas fa-clock text-red-700 mr-2"></i>
+                        Office Hours: Mon - Sun, 9 AM - 6 PM
+                    </p>
+                </div>
+                <!-- Map -->
+                <div class="w-full md:w-1/2 h-64 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.8642763040865!2d88.36389581477885!3d22.572646485180264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b7e351ed03%3A0xf13a2514a7916bb7!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1615348104708!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="scrollToTopBtn" class="scroll-to-top hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Footer -->
     <footer class="bg-red-700 text-white py-6">
         <div class="container mx-auto px-4 text-center">
@@ -631,6 +722,24 @@
                     }
                 });
             }
+        });
+
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', function () {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+
+        // Scroll to top when the button is clicked
+        document.getElementById('scrollToTopBtn').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
