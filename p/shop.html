@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Emporium - Shop</title>
+    <link rel="icon" href="../static/promo/logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <meta name="description" content="Trusted by Over 600+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
+        We predict mathematically and scientifically.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://astrovastucounselling.com/">
+    <meta property="og:title" content="Welcome to Astro Vastu Counselling">
+    <meta property="og:description" content="Trusted by Over 600+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
+        We predict mathematically and scientifically.">
+    <meta property="og:image" content="https://astrovastucounselling.com/static/promo/logo.jpg">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar-menu {
+            display: none;
+            /* Hide menu by default for mobile devices */
+        }
+
+        .navbar-menu.active {
+            display: block;
+            /* Show menu when active */
+        }
+
+        @media (min-width: 769px) {
+            .navbar-menu {
+                display: flex;
+                /* Show menu for larger screens */
+                flex-direction: row;
+                /* Horizontal layout for larger screens */
+            }
+
+            .navbar-burger {
+                display: none;
+                /* Hide burger icon for larger screens */
+            }
+
+            .navbar-item {
+                display: block;
+                color: white;
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                /* Hide menu by default for mobile devices */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #c53030;
+                /* Tailwind's red-700 */
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+            }
+
+            .navbar-item {
+                display: block;
+                margin-bottom: 1rem;
+                color: white;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .navbar-burger {
+                display: block;
+                /* Show burger icon for mobile devices */
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #c53030;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top i {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Banner -->
+    <div class="bg-red-900 text-white py-2 px-4 fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Left Side: Contact Info -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <a href="tel:6289849972" target="_blank">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+91 62898 49972</span>
+                    </a>
+                </div>
+                <div class="flex items-center hidden sm:flex">
+                    <a href="mailto:astrovastucounselling@gmail.com" target="_blank">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>astrovastucounselling@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Social Media Links -->
+            <div class="flex items-center space-x-4">
+                <span class="hidden sm:inline">Stay Connected</span>
+                <a href="https://facebook.com/official.AstroVastuCounselling/" target="_blank"
+                    class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/6289849972" target="_blank" class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.youtube.com/@AstroVastuCounselling" target="_blank"
+                    class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-red-700 shadow-md relative pt-8">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-white">Astro Vastu Counselling</h1>
+            <div class="navbar-burger cursor-pointer text-white">
+                <i class="fas fa-bars fa-2x"></i>
+            </div>
+            <nav class="navbar-menu space-y-4 md:space-x-4 md:space-y-0 md:flex md:items-center">
+                <a href="../index.html" class="navbar-item hover:text-red-300">Home</a>
+                <!-- <a href="#blog" class="navbar-item hover:text-red-300">Blog</a> -->
+                <a href="#contact" class="navbar-item hover:text-red-300">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Shop Page -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Crystal Emporium</h2>
+            <p class="text-center text-gray-800 mb-12">
+                Discover our exquisite collection of crystals to enhance your energy and well-being.
+                Browse through our curated selection and find the perfect crystal for you.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="../static/products/pyrite.webp" alt="Golden Pyrite Bracelet"
+                        class="w-48 h-48 object-cover rounded-lg mb-4 mx-auto">
+                    <h3 class="text-xl font-bold text-red-700 mb-2">Golden Pyrite Bracelet</h3>
+                    <p class="text-gray-800 mb-2">Price: ₹1599 only</p>
+                    <p class="text-gray-600 mb-4">
+                        Pyrite bracelet is a powerful protection stone that shields and protects against all forms of negative
+                        energy.
+                    </p>
+                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
+                    <div class="flex space-x-4">
+                        <a href="tel:6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                            Now</a>
+                        <a href="https://wa.me/6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
+                            Now</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="../static/products/clear-quartz.jpg" alt="Clear Quartz Bracelet"
+                        class="w-48 h-48 object-cover rounded-lg mb-4 mx-auto">
+                    <h3 class="text-xl font-bold text-red-700 mb-2">Clear Quartz Bracelet</h3>
+                    <p class="text-gray-800 mb-2">Price: ₹1199 only</p>
+                    <p class="text-gray-600 mb-4">
+                        Clear Quartz bracelet is known as the "master healer" and will amplify energy and thought, as well as the
+                        effect of other crystals.
+                    </p>
+                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
+                    <div class="flex space-x-4">
+                        <a href="tel:6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                            Now</a>
+                        <a href="https://wa.me/6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
+                            Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section class="bg-gray-100 mb-8" id="contact">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Contact Us</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Contact Information -->
+                <div class="text-left md:text-left mb-8 md:mb-0 max-w-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h3>
+                    <p class="text-gray-700 mb-4">
+                        We are here to assist you with any inquiries or support you may need. Feel free to reach out
+                        through any of the following methods:
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fas fa-phone-alt text-red-700 mr-2"></i>
+                        Call Us: <strong>+91 62898 49972</strong>
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fab fa-whatsapp text-red-700 mr-2"></i>
+                        WhatsApp: <strong>+91 62898 49972</strong>
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fas fa-envelope text-red-700 mr-2"></i>
+                        Email: <strong>astrovastucounselling@gmail.com</strong>
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <i class="fas fa-clock text-red-700 mr-2"></i>
+                        Office Hours: Mon - Sun, 9 AM - 6 PM
+                    </p>
+                </div>
+                <!-- Map -->
+                <div class="w-full md:w-1/2 h-64 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.8642763040865!2d88.36389581477885!3d22.572646485180264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b7e351ed03%3A0xf13a2514a7916bb7!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1615348104708!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="scrollToTopBtn" class="scroll-to-top hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-red-700 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Astro Vastu Counselling. All rights reserved.</p>
+            <p>Website developed by: <a href="https://surdebmalya.co.in/services.html" target="_blank"
+                    class="text-white underline">Debmalya Sur</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.querySelector('.navbar-menu');
+
+            if (window.innerWidth <= 768) {
+                burger.addEventListener('click', function () {
+                    menu.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function (event) {
+                    if (!menu.contains(event.target) && !burger.contains(event.target)) {
+                        menu.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', function () {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+
+        // Scroll to top when the button is clicked
+        document.getElementById('scrollToTopBtn').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+</body>
+
+</html>
