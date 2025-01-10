@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Tarot Webinar</title>
+    <link rel="icon" href="../static/promo/logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #c53030;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .advertisement-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            background-color: #f8f8f8;
+            /* Optional: Background color for the ad section */
+            padding: 0;
+        }
+
+        .advertisement-wrapper {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left 10s linear infinite;
+        }
+
+        .advertisement-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+        .advertisement-item {
+            display: inline-block;
+            margin-right: 0px;
+            /* Adjust space between ads */
+        }
+
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .scroll-to-top.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top i {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Banner -->
+    <div class="bg-red-900 text-white py-2 px-4 fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Left Side: Contact Info -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <a href="tel:6289849972" target="_blank">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <span>+91 62898 49972</span>
+                    </a>
+                </div>
+                <div class="flex items-center hidden sm:flex">
+                    <a href="mailto:astrovastucounselling@gmail.com" target="_blank">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>astrovastucounselling@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Social Media Links -->
+            <div class="flex items-center space-x-4">
+                <span class="hidden sm:inline">Stay Connected</span>
+                <a href="https://facebook.com/official.AstroVastuCounselling/" target="_blank"
+                    class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/6289849972" target="_blank" class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.youtube.com/@AstroVastuCounselling" target="_blank"
+                    class="hover:text-gray-300 transition duration-300">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-red-700 shadow-md relative pt-8">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-white">Astro Vastu Counselling</h1>
+            <nav class="space-x-4">
+                <a href="../index.html" class="font-extrabold text-white hover:text-red-300">Home</a>
+                <a href="../p/shop.html" class="font-extrabold text-white hover:text-red-300">Shop</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Webinar Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Banner Image -->
+                <div>
+                    <a href="https://chat.whatsapp.com/ByBxi4DW4eC8HQwASwI3OB" target="_blank">
+                        <img src="../static/promo/webinar.png" alt="Free Tarot Webinar" class="rounded-lg shadow-lg">
+                    </a>
+                </div>
+
+                <!-- Webinar Details -->
+                <div>
+                    <h2 class="text-3xl font-bold text-red-700 mb-4">Free Tarot Webinar</h2>
+                    <p class="text-gray-700 mb-4">
+                        Join us for an engaging and insightful session where you can learn the fundamentals of Tarot
+                        reading
+                        and its significance in life guidance.
+                    </p>
+                    <p class="text-gray-800 font-semibold mb-2">
+                        <i class="fas fa-calendar-alt text-red-700 mr-2"></i>
+                        Date: <span>18th & 19th January, 2025</span>
+                    </p>
+                    <p class="text-gray-800 font-semibold mb-2">
+                        <i class="fas fa-clock text-red-700 mr-2"></i>
+                        Time: <span>3:00 PM to 4:30 PM</span>
+                    </p>
+                    <p class="text-gray-800 font-semibold mb-2">
+                        <i class="fas fa-language text-red-700 mr-2"></i>
+                        Language: <span>Bengali</span>
+                    </p>
+                    <p class="text-red-700 font-bold mb-4 text-2xl">FREE SESSION!</p>
+                    <p class="text-gray-800 font-semibold mb-4">
+                        <i class="fas fa-certificate text-red-700 mr-2"></i>
+                        <span class="text-green-700">Free Verified E-Certificate</span> will be provided to all participants.
+                    </p>
+                    <a href="https://chat.whatsapp.com/ByBxi4DW4eC8HQwASwI3OB" target="_blank"
+                        class="font-extrabold bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-500 hover:shadow-green-400 hover:scale-105 transition duration-300 flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Join WhatsApp Group
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-red-700 text-center mb-8">Why Join This Webinar?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <i class="fas fa-star text-red-700 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Expert Guidance</h3>
+                    <p class="text-gray-600">Learn from an experienced Tarot reader with years of expertise.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <i class="fas fa-book text-red-700 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Comprehensive Content</h3>
+                    <p class="text-gray-600">Gain a solid foundation in Tarot reading and its applications.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <i class="fas fa-users text-red-700 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Interactive Session</h3>
+                    <p class="text-gray-600">Engage with like-minded individuals and get your questions answered live.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold text-red-700 mb-4">Trusted by Over 600+ Clients</h3>
+            <p class="text-gray-800 text-lg mb-4">Join a growing community that relies on our expertise for genuine and
+                reliable insights.</p>
+        </div>
+    </section>
+
+    <!-- Advertisement Section -->
+    <section class="advertisement-container">
+        <div class="advertisement-wrapper">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+            <img src="../static/promo/ad.png" alt="Advertisement" class="advertisement-item">
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-red-700 mb-8">Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Testimonial Card -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <!-- Profile Picture -->
+                    <img src="../static/promo/testimonials/profile1.jpg" alt="Rupali Chatterjee Profile Picture"
+                        class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">
+                    <!-- Testimonial Text -->
+                    <p class="text-gray-800 mb-4">
+                        "Astro Vastu Counselling changed my life! Their insights and guidance were spot on."
+                    </p>
+                    <!-- Name and Rating -->
+                    <div class="text-center mb-4">
+                        <!-- Name -->
+                        <span class="block text-red-700 font-semibold mb-2">- Rupali Chatterjee</span>
+                        <!-- 5 Star Rating -->
+                        <div class="flex justify-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <!-- Profile Picture -->
+                    <img src="../static/promo/testimonials/profile2.jpg" alt="Arindam Banerjee Profile Picture"
+                        class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">
+                    <!-- Testimonial Text -->
+                    <p class="text-gray-800 mb-4">
+                        "Thanks to their advice, I found peace and success in my career!"
+                    </p>
+                    <!-- Name and Rating -->
+                    <div class="text-center mb-4">
+                        <!-- Name -->
+                        <span class="block text-red-700 font-semibold mb-2">- Arindam Banerjee</span>
+                        <!-- 5 Star Rating -->
+                        <div class="flex justify-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <!-- Profile Picture -->
+                    <img src="../static/promo/testimonials/profile3.jpg" alt="Madhumita Dasgupta Profile Picture"
+                        class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">
+                    <!-- Testimonial Text -->
+                    <p class="text-gray-800 mb-4">
+                        "Professional and accurate. I highly recommend their services!"
+                    </p>
+                    <!-- Name and Rating -->
+                    <div class="text-center mb-4">
+                        <!-- Name -->
+                        <span class="block text-red-700 font-semibold mb-2">- Madhumita Dasgupta</span>
+                        <!-- 5 Star Rating -->
+                        <div class="flex justify-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Card with Video and Text -->
+            <div
+                class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 flex flex-col md:flex-row items-center">
+                <!-- Text Section -->
+                <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-6">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4">Check What People Say About Us</h3>
+                    <p class="text-gray-800 mb-4">Discover more about our clients' experiences and how our services have
+                        made
+                        a difference in their lives. Watch the video to see real testimonials and feedback.</p>
+
+                    <!-- Contact Section -->
+                    <div class="flex justify-center items-center space-x-4">
+                        <a href="tel:6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
+                            Now</a>
+                        <a href="https://wa.me/6289849972"
+                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
+                            Now</a>
+                    </div>
+                </div>
+                <!-- Video Section -->
+                <div class="flex-1">
+                    <video controls class="w-full h-auto rounded-lg">
+                        <source src="../static/promo/promo-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="scrollToTopBtn" class="scroll-to-top hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-red-700 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Free Tarot Webinar. All rights reserved.</p>
+            <p>Website developed by: <a href="https://surdebmalya.co.in/services.html" target="_blank"
+                    class="text-white underline">Debmalya Sur</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', function () {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+
+        // Scroll to top when the button is clicked
+        document.getElementById('scrollToTopBtn').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
