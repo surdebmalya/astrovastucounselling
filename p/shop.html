@@ -4,811 +4,720 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crystal Emporium - Shop</title>
+    <title>Crystal Emporium | Astro Vastu Counselling</title>
     <link rel="icon" href="../static/promo/logo.jpg" type="image/jpeg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <meta name="description" content="Trusted by Over 2500+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
-        We predict mathematically and scientifically.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://astrovastucounselling.com/">
-    <meta property="og:title" content="Welcome to Astro Vastu Counselling">
-    <meta property="og:description" content="Trusted by Over 2500+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
-        We predict mathematically and scientifically.">
-    <meta property="og:image" content="https://astrovastucounselling.com/static/promo/logo.jpg">
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f5f2; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        
+        .glass-nav {
+            background: rgba(153, 27, 27, 0.95); /* Red-800 */
+            backdrop-filter: blur(10px);
         }
 
-        .navbar-menu {
-            display: none;
-            /* Hide menu by default for mobile devices */
+        /* Card Animations */
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            border: 1px solid #e5e7eb;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #f59e0b; /* Amber border on hover */
+        }
+        
+        /* Image Zoom Effect */
+        .image-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        .product-img {
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.1);
         }
 
-        .navbar-menu.active {
-            display: block;
-            /* Show menu when active */
+        /* Whatsapp Button Gradient */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            transition: all 0.3s ease;
         }
-
-        @media (min-width: 769px) {
-            .navbar-menu {
-                display: flex;
-                /* Show menu for larger screens */
-                flex-direction: row;
-                /* Horizontal layout for larger screens */
-            }
-
-            .navbar-burger {
-                display: none;
-                /* Hide burger icon for larger screens */
-            }
-
-            .navbar-item {
-                display: block;
-                color: white;
-                text-align: center;
-                font-weight: 600;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar-menu {
-                display: none;
-                /* Hide menu by default for mobile devices */
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #c53030;
-                /* Tailwind's red-700 */
-                padding: 1rem;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                z-index: 50;
-            }
-
-            .navbar-item {
-                display: block;
-                margin-bottom: 1rem;
-                color: white;
-                text-align: center;
-                font-weight: 600;
-            }
-
-            .navbar-burger {
-                display: block;
-                /* Show burger icon for mobile devices */
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
+        .btn-whatsapp:hover {
+            opacity: 0.95;
+            shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: #c53030;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             transition: opacity 0.3s ease;
         }
-
         .scroll-to-top.hidden {
             opacity: 0;
-            visibility: hidden;
-        }
-
-        .scroll-to-top i {
-            font-size: 20px;
+            pointer-events: none;
         }
     </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="text-gray-800 antialiased">
 
-    <!-- Banner -->
-    <div class="bg-red-900 text-white py-2 px-4 fixed top-0 left-0 w-full z-50">
+    <div class="bg-gray-900 text-gray-300 py-2 px-4 text-sm hidden md:block">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Left Side: Contact Info -->
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center">
-                    <a href="tel:6289849972" target="_blank">
-                        <i class="fas fa-phone-alt mr-2"></i>
-                        <span>+91 6289849972</span>
-                    </a>
-                </div>
-                <div class="flex items-center hidden sm:flex">
-                    <a href="mailto:astrovastucounselling@gmail.com" target="_blank">
-                        <i class="fas fa-envelope mr-2"></i>
-                        <span>astrovastucounselling@gmail.com</span>
-                    </a>
-                </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:6289849972" class="hover:text-white transition"><i
+                        class="fas fa-phone-alt mr-2 text-amber-500"></i>+91 6289849972</a>
+                <a href="mailto:astrovastucounselling@gmail.com" class="hover:text-white transition"><i
+                        class="fas fa-envelope mr-2 text-amber-500"></i>astrovastucounselling@gmail.com</a>
             </div>
-
-            <!-- Right Side: Social Media Links -->
             <div class="flex items-center space-x-4">
-                <span class="hidden sm:inline">Stay Connected</span>
-                <a href="https://facebook.com/official.AstroVastuCounselling/" target="_blank"
-                    class="hover:text-gray-300 transition duration-300">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://wa.me/6289849972" target="_blank" class="hover:text-gray-300 transition duration-300">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+                <span>Follow us:</span>
+                <a href="https://facebook.com/AstroVastuCounselling.official/" target="_blank"
+                    class="hover:text-blue-500 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/6289849972" target="_blank" class="hover:text-green-500 transition"><i
+                        class="fab fa-whatsapp"></i></a>
                 <a href="https://www.youtube.com/@AstroVastuCounselling" target="_blank"
-                    class="hover:text-gray-300 transition duration-300">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                    class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="bg-red-700 shadow-md relative pt-8">
-        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <a href="../index.html"><h1 class="text-2xl font-extrabold text-white">Astro Vastu Counselling</h1></a>
-            <div class="navbar-burger cursor-pointer text-white">
-                <i class="fas fa-bars fa-2x"></i>
-            </div>
-            <nav class="navbar-menu space-y-4 md:space-x-4 md:space-y-0 md:flex md:items-center">
-                <a href="../index.html" class="navbar-item hover:text-red-300">Home</a>
-                <!-- <a href="#blog" class="navbar-item hover:text-red-300">Blog</a> -->
-                <a href="#contact" class="navbar-item hover:text-red-300">Contact Us</a>
+    <header class="glass-nav sticky top-0 z-50 shadow-lg text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <h1 class="text-xl md:text-2xl font-bold tracking-wide">Astro Vastu <span class="text-amber-400">Counselling</span></h1>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold items-center tracking-wide">
+                <a href="tel:6289849972" class="px-5 py-2 border border-amber-400 rounded-full hover:bg-amber-400 hover:text-red-900 transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> +91 6289849972
+                </a>
             </nav>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-red-900 p-4 border-t border-red-800 shadow-xl">
+            <a href="../index.html" class="block py-3 text-white font-medium border-b border-red-800">Home</a>
+            <a href="tel:6289849972" class="block py-3 text-amber-400 font-medium"><i class="fas fa-phone mr-2"></i> Call Us</a>
         </div>
     </header>
 
-    <!-- Clickable Banner -->
-    <!-- <div class="w-full flex justify-center my-4">
-        <a href="../p/free-tarot-webinar.html">
-            <img src="../static/promo/webinar-banner.png" alt="Free Tarot Webinar Banner"
-                class="max-w-lg w-full h-auto shadow-lg rounded-lg">
-        </a>
-    </div> -->
-
-    <!-- Shop Page -->
-    <section class="py-6 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Crystal Emporium</h2>
-            <p class="text-center text-gray-800 mb-12">
-                Discover our exquisite collection of crystals to enhance your energy and well-being.
-                Browse through our curated selection and find the perfect crystal for you.
+    <section class="bg-red-900 text-white py-16 px-4 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10 container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-amber-400">The Crystal Emporium</h2>
+            <p class="max-w-2xl mx-auto text-red-100 text-lg mb-8 leading-relaxed">
+                Enhance your aura with our curated collection of energized crystals. 
+                <br>Handpicked for Healing, Wealth, and Protection.
             </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Product 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/golden-pyrite-bracelet.png" alt="Golden Pyrite Bracelet"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Golden Pyrite Bracelet</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1599 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Golden Pyrite is believed to attract wealth, protect against negative energy, and boost confidence and willpower.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/clear-quartz.png" alt="Clear Quartz Bracelet"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Clear Quartz Bracelet</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1199 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Clear Quartz Bracelet is known to amplify energy, enhance clarity of thought, and promote overall healing and balance.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/citrine.png" alt="Citrine"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Citrine</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1049 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Citrine is believed to attract wealth and success, boost confidence, and promote joy and positive energy.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/black-tourmaline.png" alt="Black Tourmaline"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Black Tourmaline</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1099 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Black Tourmaline is known for its powerful protection against negative energy, electromagnetic radiation, and emotional stress.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/sulamani-hakik.png" alt="Sulamani Hakik"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Sulamani Hakik</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹2499 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Sulemani Hakik (Agate) is believed to enhance concentration, protect from evil eye, and bring emotional stability and grounding.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/red-jasper.png" alt="Red Jasper"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Red Jasper</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1299 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Red Jasper is known to boost physical strength, enhance stamina, and provide grounding, courage, and emotional stability.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 7 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/garnet.png" alt="Garnet"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Garnet</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1199 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Garnet is believed to boost energy, enhance passion and creativity, and promote love, confidence, and emotional balance.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/Hematite.png" alt="Hematite"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Hematite</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1049 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Hematite is known for grounding energy, enhancing focus and concentration, and providing protection from negative influences.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 9 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/red-carnelian.png" alt="Red Carnelian"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Red Carnelian</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1249 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Red Carnelian is believed to boost motivation, creativity, and confidence while promoting courage and vitality.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 10 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/Tiger-eye.png" alt="Tiger Eye"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Tiger Eye</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1119 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Tiger Eye is known to enhance courage, confidence, and willpower while providing protection and mental clarity.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 11 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/pink-rhodonite.png" alt="Pink Rhodonite"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Pink Rhodonite</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1299 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Pink Rhodonite is believed to promote emotional healing, compassion, and forgiveness while balancing the heart and calming the mind.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 12 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/rhodocrosite.png" alt="Rhodocrosite"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Rhodocrosite</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1289 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Rhodochrosite is known to encourage self-love, emotional healing, and joy while relieving stress and past traumas.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 13 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/green-adventurine.png" alt="Green Adventurine"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Green Adventurine</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1189 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Green Aventurine is believed to attract luck, abundance, and opportunities while promoting emotional calm and heart healing.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 14 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/rose-quartz.png" alt="Rose Quartz"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Rose Quartz</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1189 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Rose Quartz is known to promote unconditional love, emotional healing, and harmony in relationships.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 15 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/amethyst.png" alt="Amethyst"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Amethyst</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1199 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Amethyst is believed to promote calmness, spiritual growth, and protection while relieving stress and enhancing intuition.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 16 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/howlite.png" alt="Howlite"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Howlite</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1399 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Howlite is known to promote calmness, reduce anxiety, and aid in sleep and emotional expression.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 17 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/turquoise.png" alt="Turquoise"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Turquoise</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1189 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Turquoise is believed to provide protection, enhance communication, and promote healing, peace, and emotional balance.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 18 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/moonstone.png" alt="Moonstone"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Moonstone</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1349 only</p>
-                    <p class="text-gray-800 mb-2">Size: 8 mm</p>
-                    <p class="text-gray-600 mb-4">
-                        Moonstone is known to enhance intuition, emotional balance, and inner growth while promoting calmness and new beginnings.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 19 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/Amethyast-pyramid.png" alt="Amethyast Pyramid"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Amethyast Pyramid</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1499 only</p>
-                    <p class="text-gray-800 mb-2">Size: Above 90 mm large</p>
-                    <p class="text-gray-600 mb-4">
-                        An Amethyst Pyramid is believed to amplify spiritual energy, enhance intuition, and promote calmness, clarity, and protection in a space.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 20 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/Annapurna-pyramid.png" alt="Annapoorna Pyramid"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Annapoorna Pyramid</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1999 only</p>
-                    <p class="text-gray-800 mb-2">Size: 2.5 inch(H), 3.0 inch(W), 3.0 inch(L)</p>
-                    <p class="text-gray-600 mb-4">
-                        Annapurna Pyramid is believed to attract abundance, nourish prosperity, and promote a sense of fulfillment and well-being in the home.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 21 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/lakshmi-yantra-pyramid.png" alt="Lakshmi Yantra Pyramid"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Lakshmi Yantra Pyramid</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹1499 only</p>
-                    <p class="text-gray-800 mb-2">Size: Above 90 mm large</p>
-                    <p class="text-gray-600 mb-4">
-                        The Lakshmi Yantra Pyramid is believed to attract wealth, prosperity, and success while promoting spiritual growth and abundance.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 22 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/green-adventurine-ganesh.png" alt="Green Adventurine Ganesh"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Green Adventurine Ganesh</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹5599 only</p>
-                    <p class="text-gray-800 mb-2">Weight: 170 gm</p>
-                    <p class="text-gray-600 mb-4">
-                        The Green Aventurine Ganesh is believed to bring good fortune, remove obstacles, and attract prosperity and success while promoting emotional healing.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 23 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="../static/products/kuber-kunji.png" alt="Kuber Kunji"
-                            class="w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-2">Kuber Kunji</h3>
-                    <p class="text-gray-800 mb-2">Price: ₹899 only</p>
-                    <p class="text-gray-800 mb-2">Size: Standard</p>
-                    <p class="text-gray-600 mb-4">
-                        Kuber Kunji is believed to attract wealth, prosperity, and financial stability while enhancing abundance and success in one's life.
-                    </p>
-                    <p class="text-gray-800 mb-4">If you want to buy it:</p>
-                    <div class="flex space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">WhatsApp
-                            Now</a>
-                    </div>
-                </div>
+            <div class="flex justify-center gap-4 text-xs md:text-sm font-semibold tracking-wider text-amber-200 uppercase">
+                <span class="flex items-center"><i class="fas fa-check-circle mr-2"></i> 100% Authentic</span>
+                <span class="flex items-center"><i class="fas fa-bolt mr-2"></i> Spiritually Energized</span>
             </div>
         </div>
     </section>
 
-    <!-- Contact Us -->
-    <section class="bg-gray-100 mb-8" id="contact">
-        <div class="container mx-auto px-4 pt-8">
-            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Contact Us</h2>
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <!-- Contact Information -->
-                <div class="text-left md:text-left mb-8 md:mb-0 max-w-md">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h3>
-                    <p class="text-gray-700 mb-4">
-                        We are here to assist you with any inquiries or support you may need. Feel free to reach out
-                        through any of the following methods:
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fas fa-phone-alt text-red-700 mr-2"></i>
-                        Call Us: <strong>+91 6289849972</strong>
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fab fa-whatsapp text-red-700 mr-2"></i>
-                        WhatsApp: <strong>+91 6289849972</strong>
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fas fa-envelope text-red-700 mr-2"></i>
-                        Email: <strong>astrovastucounselling@gmail.com</strong>
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fas fa-clock text-red-700 mr-2"></i>
-                        Office Hours: Mon - Sat, 10 AM - 6 PM
-                    </p>
+    <section class="py-16 -mt-8 relative z-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10 uppercase tracking-widest">Best Seller</span>
+                        <img src="../static/products/golden-pyrite-bracelet.png" alt="Golden Pyrite" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Golden Pyrite Bracelet</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Attracts wealth, protects against negative energy, and boosts confidence.</p>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1599</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition" title="Call for Enquiry">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Golden%20Pyrite%20Bracelet" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Map -->
-                <div class="w-full md:w-1/2 h-64 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.8642763040865!2d88.36389581477885!3d22.572646485180264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b7e351ed03%3A0xf13a2514a7916bb7!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1615348104708!5m2!1sen!2sin"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur text-red-800 text-[10px] font-bold px-2 py-1 rounded shadow z-10 uppercase">Energized</span>
+                        <img src="../static/products/clear-quartz.png" alt="Clear Quartz" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Clear Quartz Bracelet</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Amplifies energy, enhances clarity of thought, and promotes overall healing.</p>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1199</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Clear%20Quartz%20Bracelet" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/citrine.png" alt="Citrine" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Citrine</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Attracts wealth and success, boosts confidence, and promotes joy.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1049</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Citrine" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                         <span class="absolute top-3 left-3 bg-gray-800 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10 uppercase tracking-widest">Protection</span>
+                        <img src="../static/products/black-tourmaline.png" alt="Black Tourmaline" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Black Tourmaline</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Powerful protection against negative energy, radiation, and emotional stress.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1099</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Black%20Tourmaline" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/sulamani-hakik.png" alt="Sulamani Hakik" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Sulamani Hakik</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Enhances concentration, protects from evil eye, and brings grounding.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹2499</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Sulamani%20Hakik" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/red-jasper.png" alt="Red Jasper" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Red Jasper</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Boosts physical strength, enhances stamina, courage, and stability.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1299</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Red%20Jasper" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/garnet.png" alt="Garnet" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Garnet</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Boosts energy, enhances passion, creativity, and promotes love.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1199</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Garnet" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/Hematite.png" alt="Hematite" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Hematite</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Grounding energy, enhances focus, and protects from negativity.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1049</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Hematite" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/red-carnelian.png" alt="Red Carnelian" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Red Carnelian</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Boosts motivation, creativity, and confidence while promoting courage.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1249</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Red%20Carnelian" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/Tiger-eye.png" alt="Tiger Eye" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Tiger Eye</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Enhances courage, confidence, and willpower while providing mental clarity.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1119</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Tiger%20Eye" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/pink-rhodonite.png" alt="Pink Rhodonite" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Pink Rhodonite</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Promotes emotional healing, compassion, forgiveness and calmness.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1299</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Pink%20Rhodonite" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/rhodocrosite.png" alt="Rhodocrosite" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Rhodochrosite</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Encourages self-love, emotional healing, and joy while relieving stress.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1289</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Rhodochrosite" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/green-adventurine.png" alt="Green Aventurine" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Green Aventurine</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Attracts luck, abundance, and opportunities while promoting calm.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1189</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Green%20Aventurine" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur text-red-800 text-[10px] font-bold px-2 py-1 rounded shadow z-10 uppercase">Love</span>
+                        <img src="../static/products/rose-quartz.png" alt="Rose Quartz" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Rose Quartz</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Promotes unconditional love, emotional healing, and relationship harmony.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1189</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Rose%20Quartz" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/amethyst.png" alt="Amethyst" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Amethyst</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Promotes calmness, spiritual growth, and enhances intuition.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1199</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Amethyst" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/howlite.png" alt="Howlite" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Howlite</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Known to promote calmness, reduce anxiety, and aid in sleep.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1399</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Howlite" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/turquoise.png" alt="Turquoise" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Turquoise</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Provides protection, enhances communication, and healing.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1189</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Turquoise" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/moonstone.png" alt="Moonstone" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Moonstone</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 8 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Enhances intuition, emotional balance, and new beginnings.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1349</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Moonstone" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <span class="absolute top-3 right-3 bg-white/90 backdrop-blur text-purple-800 text-[10px] font-bold px-2 py-1 rounded shadow z-10 uppercase">Vastu</span>
+                        <img src="../static/products/Amethyast-pyramid.png" alt="Amethyst Pyramid" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Amethyst Pyramid</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: > 90 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Amplifies spiritual energy, enhances intuition, and clarifies space.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1499</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Amethyst%20Pyramid" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/Annapurna-pyramid.png" alt="Annapoorna Pyramid" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Annapoorna Pyramid</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: 2.5 x 3.0 x 3.0 IN</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Attracts abundance, nourishes prosperity, and promotes fulfillment.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1999</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Annapoorna%20Pyramid" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <img src="../static/products/lakshmi-yantra-pyramid.png" alt="Lakshmi Yantra Pyramid" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Lakshmi Yantra</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: > 90 MM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Attracts wealth, prosperity, and success while promoting spiritual growth.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹1499</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Lakshmi%20Yantra%20Pyramid" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <span class="absolute top-3 right-3 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded shadow z-10 uppercase">Premium</span>
+                        <img src="../static/products/green-adventurine-ganesh.png" alt="Green Aventurine Ganesh" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Green Aventurine Ganesh</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">WEIGHT: 170 GM</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Brings good fortune, removes obstacles, and attracts prosperity.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹5599</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Green%20Aventurine%20Ganesh" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden flex flex-col h-full">
+                    <div class="image-wrapper h-64 w-full bg-gray-100">
+                        <span class="absolute top-3 left-3 bg-red-700 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10 uppercase">Key to Wealth</span>
+                        <img src="../static/products/kuber-kunji.png" alt="Kuber Kunji" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Kuber Kunji</h3>
+                        <p class="text-xs font-semibold text-gray-500 mb-3">SIZE: STANDARD</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Attracts wealth, prosperity, and financial stability.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-red-800">₹899</span>
+                                <a href="tel:6289849972" class="text-gray-400 hover:text-red-700 transition">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <a href="https://wa.me/6289849972?text=I%20want%20to%20buy%20Kuber%20Kunji" target="_blank" class="btn-whatsapp w-full flex items-center justify-center text-white font-bold py-3 rounded-xl shadow-lg">
+                                <i class="fab fa-whatsapp text-xl mr-2"></i> Buy on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <button id="scrollToTopBtn" class="scroll-to-top hidden">
+    <button id="scrollToTopBtn" class="scroll-to-top hidden fixed bottom-8 right-8 w-12 h-12 bg-red-800 rounded-full text-white shadow-lg flex items-center justify-center hover:bg-red-700 hover:scale-110 z-50">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Footer -->
-    <footer class="bg-red-700 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Astro Vastu Counselling. All rights reserved.</p>
-            <p>Website developed by: <a href="https://surdebmalya.co.in" target="_blank"
-                    class="text-white underline">Debmalya Sur</a></p>
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-10 border-t-4 border-red-800">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Astro Vastu Counselling</h4>
+                    <p class="text-sm text-gray-400">Trusted by Over 2500+ Clients. Mathematical and scientific
+                        predictions for your best life direction.</p>
+                        <div class="mt-8 p-4 bg-gray-800/40 rounded-xl border border-gray-700/50 backdrop-blur-sm w-fit">
+                        <div class="flex items-center mb-1">
+                            <span class="live-dot"></span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">Live Traffic</span>
+                        </div>
+                        <div class="flex items-baseline gap-2">
+                            <i class="fas fa-chart-line text-amber-500 text-sm"></i>
+                            <span id="visitor-count" class="text-2xl font-bold text-amber-500 count-glow font-mono">0000</span>
+                            <span class="text-xs text-gray-500 font-medium">Total Visitors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Quick Links</h4>
+                    <div class="flex flex-col space-y-2 text-sm">
+                        <a href="../index.html" class="hover:text-amber-500">Home</a>
+                        <a href="../index.html#services" class="hover:text-amber-500">Services</a>
+                        <a href="#" class="hover:text-amber-500">Shop</a>
+                        <a href="./courses.html" class="hover:text-amber-500">Courses</a>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Contact Us</h4>
+                    <p class="text-sm"><i class="fas fa-phone mr-2 text-amber-500"></i>+91 6289849972</p>
+                    <p class="text-sm mt-2"><i
+                            class="fas fa-envelope mr-2 text-amber-500"></i>astrovastucounselling@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>© 2026 Astro Vastu Counselling. All rights reserved.</p>
+                <p>Developed by <a href="https://surdebmalya.co.in" target="_blank"
+                        class="text-amber-500 hover:underline">Debmalya Sur</a></p>
+            </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const burger = document.querySelector('.navbar-burger');
-            const menu = document.querySelector('.navbar-menu');
-
-            if (window.innerWidth <= 768) {
-                burger.addEventListener('click', function () {
-                    menu.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function (event) {
-                    if (!menu.contains(event.target) && !burger.contains(event.target)) {
-                        menu.classList.remove('active');
-                    }
-                });
-            }
-        });
-
-        // Show or hide the button based on scroll position
-        window.addEventListener('scroll', function () {
-            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.remove('hidden');
+        // Scroll Top Logic
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('hidden');
             } else {
-                scrollToTopBtn.classList.add('hidden');
+                scrollBtn.classList.add('hidden');
             }
         });
-
-        // Scroll to top when the button is clicked
-        document.getElementById('scrollToTopBtn').addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
-</body>
 
+        // Visitor Count Script
+        fetch('https://api.counterapi.dev/v2/debmalya-surs-team-1487/astrology-counter/up')
+            .then(response => response.json())
+            .then(data => {
+                const count = data?.data?.up_count ?? 0;
+                console.log('Visits:', count);
+                document.getElementById('visitor-count').textContent = count.toLocaleString();
+            })
+            .catch(err => {
+                console.error('Error fetching counter:', err);
+                document.getElementById('visitor-count').textContent = 'Error';
+            });
+    </script>
+</body>
 </html>

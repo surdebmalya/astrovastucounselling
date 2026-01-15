@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses | Astro Vastu Counselling</title>
+    <link rel="icon" href="../static/promo/logo.jpg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #fdf8f6; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        
+        .glass-nav {
+            background: rgba(127, 29, 29, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .scroll-to-top, .topic-nav-btn {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        .course-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid #fee2e2;
+        }
+        @media (min-width: 768px) {
+            .course-card { padding: 2.5rem; }
+        }
+
+        /* Sidebar Styling */
+        .sidebar-link {
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-link:hover {
+            background-color: #fff1f2;
+            border-left-color: #991b1b;
+            color: #991b1b;
+        }
+        
+        /* Animation for Mobile Menu */
+        #topic-overlay {
+            transition: opacity 0.3s ease, visibility 0.3s;
+        }
+    </style>
+</head>
+
+<body class="text-gray-700 antialiased relative">
+
+    <div class="bg-gray-900 text-gray-300 py-2 px-4 text-sm hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="tel:6289849972" class="hover:text-white transition"><i class="fas fa-phone-alt mr-2 text-amber-500"></i>+91 6289849972</a>
+                <a href="mailto:astrovastucounselling@gmail.com" class="hover:text-white transition"><i class="fas fa-envelope mr-2 text-amber-500"></i>astrovastucounselling@gmail.com</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span>Follow us:</span>
+                <a href="https://facebook.com/AstroVastuCounselling.official/" target="_blank" class="hover:text-blue-500 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/6289849972" target="_blank" class="hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/@AstroVastuCounselling" target="_blank" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="glass-nav sticky top-0 z-50 shadow-lg text-white">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-2">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Astro Vastu <span class="text-amber-400">Counselling</span></h1>
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-amber-400 focus:outline-none">
+                <i class="fas fa-bars fa-xl"></i>
+            </button>
+
+            <nav class="hidden md:flex space-x-8 font-medium items-center">
+                <a href="../index.html#home" class="hover:text-amber-400 transition">Home</a>
+                <a href="../index.html#services" class="hover:text-amber-400 transition">Services</a>
+                <a href="./shop.html" class="px-5 py-2 bg-amber-500 text-red-900 rounded-full font-bold hover:bg-amber-400 transition shadow-lg transform hover:scale-105">Shop</a>
+            </nav>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-red-900 border-t border-red-800 p-4 absolute w-full shadow-2xl">
+            <a href="../index.html#home" class="block py-3 border-b border-red-800 hover:text-amber-400">Home</a>
+            <a href="../index.html#services" class="block py-3 border-b border-red-800 hover:text-amber-400">Services</a>
+            <a href="./shop.html" class="block py-3 text-amber-400 font-bold">Shop Crystal Emporium</a>
+        </div>
+    </header>
+
+    <section class="relative py-12 md:py-20 bg-gradient-to-b from-red-50 to-white overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <span class="text-red-700 font-semibold tracking-wider uppercase text-xs md:text-sm bg-red-100 px-4 py-1 rounded-full">Educational Excellence</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mt-6 mb-4 leading-tight">Professional <span class="text-red-800">Occult Science</span> Courses</h2>
+            <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">Master the ancient arts with scientific methodology.</p>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-8 md:py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                
+                <div class="flex-1 space-y-8 md:space-y-16">
+                    
+                    <div id="tarot" class="course-card shadow-sm scroll-mt-24">
+                        <h3 class="text-2xl md:text-3xl font-bold text-red-800 mb-6 border-l-4 border-amber-500 pl-4">Course on Tarot Card Reading</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="card-hover">
+                                <img src="../static/courses/tarot-card/course1.png" alt="Tarot Course 1" class="w-full h-auto rounded-2xl shadow-md mb-6 border border-gray-100">
+                                <div class="flex gap-3">
+                                    <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-xl font-semibold">Call</a>
+                                    <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-xl font-semibold">Chat</a>
+                                </div>
+                            </div>
+                            <div class="card-hover">
+                                <img src="../static/courses/tarot-card/course2.png" alt="Tarot Course 2" class="w-full h-auto rounded-2xl shadow-md mb-6 border border-gray-100">
+                                <div class="flex gap-3">
+                                    <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-xl font-semibold">Call</a>
+                                    <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-xl font-semibold">Chat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="numerology" class="course-card shadow-sm scroll-mt-24">
+                        <h3 class="text-2xl md:text-3xl font-bold text-red-800 mb-6 border-l-4 border-amber-500 pl-4">Course on Numerology</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="card-hover">
+                                <img src="../static/courses/numerology/course1.png" class="w-full h-auto rounded-2xl shadow-md mb-6">
+                                <div class="flex gap-3">
+                                    <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-xl font-semibold">Call Now</a>
+                                    <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-xl font-semibold">Chat Now</a>
+                                </div>
+                            </div>
+                            <div class="card-hover">
+                                <img src="../static/courses/numerology/course2.png" class="w-full h-auto rounded-2xl shadow-md mb-6">
+                                <div class="flex gap-3">
+                                    <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-xl font-semibold">Call Now</a>
+                                    <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-xl font-semibold">Chat Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div id="crystal" class="course-card shadow-sm scroll-mt-24">
+                            <h3 class="text-2xl font-bold text-red-800 mb-6 border-l-4 border-amber-500 pl-4">Course on Crystal</h3>
+                            <img src="../static/courses/crystal/course1.png" class="w-full h-auto rounded-xl shadow-md mb-6">
+                            <div class="flex gap-4">
+                                <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-lg font-semibold">Call</a>
+                                <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-lg font-semibold">Chat</a>
+                            </div>
+                        </div>
+                        <div id="vastu" class="course-card shadow-sm scroll-mt-24">
+                            <h3 class="text-2xl font-bold text-red-800 mb-6 border-l-4 border-amber-500 pl-4">Course on Vastu</h3>
+                            <img src="../static/courses/vastu/course1.png" class="w-full h-auto rounded-xl shadow-md mb-6">
+                            <div class="flex gap-4">
+                                <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-lg font-semibold">Call</a>
+                                <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-lg font-semibold">Chat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div id="zibu" class="course-card shadow-sm scroll-mt-24 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-red-800 mb-4">Zibu Symbols</h3>
+                                <img src="../static/courses/zibu-symbols/course1.png" class="w-full h-auto rounded-lg mb-6">
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-2 rounded-lg text-sm">Call</a>
+                                <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-2 rounded-lg text-sm">Chat</a>
+                            </div>
+                        </div>
+                        <div id="vision-board" class="course-card shadow-sm scroll-mt-24 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-red-800 mb-4">Vision Board</h3>
+                                <img src="../static/courses/vision-board/course1.png" class="w-full h-auto rounded-lg mb-6">
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-2 rounded-lg text-sm">Call</a>
+                                <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-2 rounded-lg text-sm">Chat</a>
+                            </div>
+                        </div>
+                        <div id="reiki" class="course-card shadow-sm scroll-mt-24 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-red-800 mb-4">Reiki Healing</h3>
+                                <img src="../static/courses/reiki/course1.png" class="w-full h-auto rounded-lg mb-6">
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-2 rounded-lg text-sm">Call</a>
+                                <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-2 rounded-lg text-sm">Chat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div id="yantra" class="course-card shadow-sm scroll-mt-24">
+                            <h3 class="text-xl font-bold text-red-800 mb-4">Yantra Making</h3>
+                            <img src="../static/courses/yantra/course1.png" class="w-full h-auto rounded-lg mb-6">
+                            <div class="flex gap-4">
+                                <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-xl">Call</a>
+                                <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-xl">Chat</a>
+                            </div>
+                        </div>
+                        <div id="switch-words" class="course-card shadow-sm scroll-mt-24">
+                            <h3 class="text-xl font-bold text-red-800 mb-4">Switch Words</h3>
+                            <img src="../static/courses/switch-words/course1.png" class="w-full h-auto rounded-lg mb-6">
+                            <div class="flex gap-4">
+                                <a href="tel:6289849972" class="flex-1 text-center bg-red-800 text-white py-3 rounded-xl">Call</a>
+                                <a href="https://wa.me/6289849972" class="flex-1 text-center bg-green-600 text-white py-3 rounded-xl">Chat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside class="hidden lg:block w-72 h-fit sticky top-28">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-red-100">
+                        <h4 class="text-red-900 font-bold mb-4 flex items-center gap-2">
+                            <i class="fas fa-list-ul"></i> Course Topics
+                        </h4>
+                        <nav class="flex flex-col space-y-1">
+                            <a href="#tarot" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Tarot Card Reading</a>
+                            <a href="#numerology" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Numerology</a>
+                            <a href="#crystal" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Crystal Healing</a>
+                            <a href="#vastu" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Vastu Shastra</a>
+                            <a href="#zibu" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Zibu Symbols</a>
+                            <a href="#vision-board" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Vision Board</a>
+                            <a href="#reiki" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Reiki Healing</a>
+                            <a href="#yantra" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Yantra Making</a>
+                            <a href="#switch-words" class="sidebar-link px-4 py-2 rounded-lg text-sm font-medium">Switch Words</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-10 border-t-4 border-red-800">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Astro Vastu Counselling</h4>
+                    <p class="text-sm text-gray-400">Trusted by Over 2500+ Clients. Mathematical and scientific
+                        predictions for your best life direction.</p>
+                        <div class="mt-8 p-4 bg-gray-800/40 rounded-xl border border-gray-700/50 backdrop-blur-sm w-fit">
+                        <div class="flex items-center mb-1">
+                            <span class="live-dot"></span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">Live Traffic</span>
+                        </div>
+                        <div class="flex items-baseline gap-2">
+                            <i class="fas fa-chart-line text-amber-500 text-sm"></i>
+                            <span id="visitor-count" class="text-2xl font-bold text-amber-500 count-glow font-mono">0000</span>
+                            <span class="text-xs text-gray-500 font-medium">Total Visitors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Quick Links</h4>
+                    <div class="flex flex-col space-y-2 text-sm">
+                        <a href="../index.html" class="hover:text-amber-500">Home</a>
+                        <a href="../index.html#services" class="hover:text-amber-500">Services</a>
+                        <a href="./shop.html" class="hover:text-amber-500">Shop</a>
+                        <a href="#" class="hover:text-amber-500">Courses</a>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Contact Us</h4>
+                    <p class="text-sm"><i class="fas fa-phone mr-2 text-amber-500"></i>+91 6289849972</p>
+                    <p class="text-sm mt-2"><i
+                            class="fas fa-envelope mr-2 text-amber-500"></i>astrovastucounselling@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>© 2026 Astro Vastu Counselling. All rights reserved.</p>
+                <p>Developed by <a href="https://surdebmalya.co.in" target="_blank"
+                        class="text-amber-500 hover:underline">Debmalya Sur</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        <button id="open-topics-btn" class="lg:hidden topic-nav-btn w-12 h-12 rounded-full text-white shadow-2xl flex items-center justify-center hover:scale-110">
+            <i class="fas fa-list-alt text-xl"></i>
+        </button>
+        <button id="scrollToTopBtn" class="hidden scroll-to-top w-12 h-12 rounded-full text-white shadow-2xl flex items-center justify-center hover:scale-110">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <div id="topic-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden flex items-end">
+        <div class="bg-white w-full rounded-t-3xl p-6 shadow-2xl animate-slide-up">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-red-900">Explore Topics</h3>
+                <button id="close-topics-btn" class="text-gray-400 hover:text-red-900"><i class="fas fa-times fa-lg"></i></button>
+            </div>
+            <div class="grid grid-cols-2 gap-3 pb-8">
+                <a href="#tarot" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Tarot</a>
+                <a href="#numerology" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Numerology</a>
+                <a href="#crystal" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Crystal</a>
+                <a href="#vastu" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Vastu</a>
+                <a href="#zibu" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Zibu</a>
+                <a href="#vision-board" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Vision Board</a>
+                <a href="#reiki" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Reiki</a>
+                <a href="#yantra" class="mobile-topic-link bg-red-50 text-red-900 p-3 rounded-xl text-center text-sm font-semibold">Yantra</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        // Toggle Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', (e) => {
+            // Stop propagation to prevent the "click outside" listener from firing immediately
+            e.stopPropagation(); 
+            menu.classList.toggle('hidden');
+        });
+
+        // NEW: Close mobile menu when clicking anywhere else on the screen
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickOnButton = btn.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Scroll Top Logic
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('hidden');
+            } else {
+                scrollBtn.classList.add('hidden');
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Close mobile menu when clicking a link (Keep this to ensure navigation closes menu)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+
+        // Visitor Count Script
+        fetch('https://api.counterapi.dev/v2/debmalya-surs-team-1487/astrology-counter/up')
+            .then(response => response.json())
+            .then(data => {
+                const count = data?.data?.up_count ?? 0;
+                document.getElementById('visitor-count').textContent = count.toLocaleString();
+            })
+            .catch(err => {
+                console.error('Error fetching counter:', err);
+                document.getElementById('visitor-count').textContent = 'Error';
+            });
+
+        // Mobile Topic Overlay Logic
+        const topicOverlay = document.getElementById('topic-overlay');
+        const openTopicsBtn = document.getElementById('open-topics-btn');
+        const closeTopicsBtn = document.getElementById('close-topics-btn');
+
+        openTopicsBtn.addEventListener('click', () => {
+            topicOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        const closeOverlay = () => {
+            topicOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        closeTopicsBtn.addEventListener('click', closeOverlay);
+        
+        // Close overlay when clicking a topic link
+        document.querySelectorAll('.mobile-topic-link').forEach(link => {
+            link.addEventListener('click', closeOverlay);
+        });
+
+        // Close overlay when clicking outside the content
+        topicOverlay.addEventListener('click', (e) => {
+            if (e.target === topicOverlay) closeOverlay();
+        });
+    </script>
+</body>
+</html>

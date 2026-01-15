@@ -4,125 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astro Vastu Counselling</title>
+    <title>Astro Vastu Counselling | Guide to a Better Life</title>
     <link rel="icon" href="./static/promo/logo.jpg" type="image/jpeg">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <meta name="description" content="Trusted by Over 2500+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
-        We predict mathematically and scientifically. One-stop solution for Astrology. Online Booking is available.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://astrovastucounselling.com/">
-    <meta property="og:title" content="Welcome to Astro Vastu Counselling">
-    <meta property="og:description" content="Trusted by Over 2500+ Clients. We are on a mission to provide solutions of your life problems and guide you the best life direction.
-        We predict mathematically and scientifically.">
-    <meta property="og:image" content="https://astrovastucounselling.com/static/promo/logo.jpg">
 
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: #fdf8f6;
         }
 
-        .navbar-menu {
-            display: none;
-            /* Hide menu by default for mobile devices */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
         }
 
-        .navbar-menu.active {
-            display: block;
-            /* Show menu when active */
+        .glass-nav {
+            background: rgba(127, 29, 29, 0.95);
+            backdrop-filter: blur(10px);
         }
 
-        @media (min-width: 769px) {
-            .navbar-menu {
-                display: flex;
-                /* Show menu for larger screens */
-                flex-direction: row;
-                /* Horizontal layout for larger screens */
-            }
-
-            .navbar-burger {
-                display: none;
-                /* Hide burger icon for larger screens */
-            }
-
-            .navbar-item {
-                display: block;
-                color: white;
-                text-align: center;
-                font-weight: 600;
-            }
+        .card-hover {
+            transition: all 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .navbar-menu {
-                display: none;
-                /* Hide menu by default for mobile devices */
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #c53030;
-                /* Tailwind's red-700 */
-                padding: 1rem;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                z-index: 50;
-            }
-
-            .navbar-item {
-                display: block;
-                margin-bottom: 1rem;
-                color: white;
-                text-align: center;
-                font-weight: 600;
-            }
-
-            .navbar-burger {
-                display: block;
-                /* Show burger icon for mobile devices */
-            }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        .advertisement-container {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            background-color: #f8f8f8;
-            /* Optional: Background color for the ad section */
-            padding: 0;
+        .scroll-to-top {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
         }
 
         .advertisement-wrapper {
             display: inline-block;
             white-space: nowrap;
-            animation: scroll-left 10s linear infinite;
-        }
-
-        .advertisement-wrapper:hover {
-            animation-play-state: paused;
-        }
-
-        .advertisement-item {
-            display: inline-block;
-            margin-right: 0px;
-            /* Adjust space between ads */
-        }
-
-        .advertisement-container-shop {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            background-color: white;
-            /* Optional: Background color for the ad section */
-            padding: 0;
-        }
-
-        .advertisement-item-shop {
-            display: inline-block;
-            margin-right: 0px;
-            /* Adjust space between ads */
-            height: 350px;
-            width: 350px;
+            animation: scroll-left 20s linear infinite;
         }
 
         @keyframes scroll-left {
@@ -134,1283 +66,404 @@
                 transform: translateX(-50%);
             }
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: #c53030;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s ease;
-        }
-
-        .scroll-to-top.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .scroll-to-top i {
-            font-size: 20px;
-        }
     </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="text-gray-700 antialiased">
 
-    <!-- Banner -->
-    <div class="bg-red-900 text-white py-2 px-4 fixed top-0 left-0 w-full z-50">
+    <div class="bg-gray-900 text-gray-300 py-2 px-4 text-sm hidden md:block">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Left Side: Contact Info -->
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center">
-                    <a href="tel:6289849972" target="_blank">
-                        <i class="fas fa-phone-alt mr-2"></i>
-                        <span>+91 6289849972</span>
-                    </a>
-                </div>
-                <div class="flex items-center hidden sm:flex">
-                    <a href="mailto:astrovastucounselling@gmail.com" target="_blank">
-                        <i class="fas fa-envelope mr-2"></i>
-                        <span>astrovastucounselling@gmail.com</span>
-                    </a>
-                </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:6289849972" class="hover:text-white transition"><i
+                        class="fas fa-phone-alt mr-2 text-amber-500"></i>+91 6289849972</a>
+                <a href="mailto:astrovastucounselling@gmail.com" class="hover:text-white transition"><i
+                        class="fas fa-envelope mr-2 text-amber-500"></i>astrovastucounselling@gmail.com</a>
             </div>
-
-            <!-- Right Side: Social Media Links -->
             <div class="flex items-center space-x-4">
-                <span class="hidden sm:inline">Stay Connected</span>
+                <span>Follow us:</span>
                 <a href="https://facebook.com/AstroVastuCounselling.official/" target="_blank"
-                    class="hover:text-gray-300 transition duration-300">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://wa.me/6289849972" target="_blank" class="hover:text-gray-300 transition duration-300">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+                    class="hover:text-blue-500 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/6289849972" target="_blank" class="hover:text-green-500 transition"><i
+                        class="fab fa-whatsapp"></i></a>
                 <a href="https://www.youtube.com/@AstroVastuCounselling" target="_blank"
-                    class="hover:text-gray-300 transition duration-300">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                    class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="bg-red-700 shadow-md relative pt-8">
-        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <h1 class="text-2xl font-extrabold text-white">Astro Vastu Counselling</h1>
-            <div class="navbar-burger cursor-pointer text-white">
-                <i class="fas fa-bars fa-2x"></i>
-            </div>
-            <nav class="navbar-menu space-y-4 md:space-x-4 md:space-y-0 md:flex md:items-center">
-                <a href="#home" class="navbar-item hover:text-red-300">Home</a>
-                <a href="#about" class="navbar-item hover:text-red-300">About</a>
-                <a href="#services" class="navbar-item hover:text-red-300">Services</a>
-                <a href="#courses" class="navbar-item hover:text-red-300">Courses</a>
-                <a href="./p/shop.html" class="navbar-item hover:text-red-300">Shop</a>
-                <!-- <a href="#blog" class="navbar-item hover:text-red-300">Blog</a> -->
-                <a href="#contact" class="navbar-item hover:text-red-300">Contact Us</a>
+    <header class="glass-nav sticky top-0 z-50 shadow-lg text-white">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Astro Vastu <span class="text-amber-400">Counselling</span></h1>
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-amber-400 focus:outline-none">
+                <i class="fas fa-bars fa-xl"></i>
+            </button>
+
+            <nav class="hidden md:flex space-x-8 font-medium items-center">
+                <a href="#home" class="hover:text-amber-400 transition">Home</a>
+                <a href="#services" class="hover:text-amber-400 transition">Services</a>
+                <a href="./p/courses.html" class="hover:text-amber-400 transition">Courses</a>
+                <a href="./p/shop.html" class="px-5 py-2 bg-amber-500 text-red-900 rounded-full font-bold hover:bg-amber-400 transition shadow-lg transform hover:scale-105">Shop</a>
+                <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
             </nav>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-red-900 border-t border-red-800 p-4 absolute w-full shadow-2xl">
+            <a href="#home" class="block py-3 border-b border-red-800 hover:text-amber-400">Home</a>
+            <a href="#services" class="block py-3 border-b border-red-800 hover:text-amber-400">Services</a>
+            <a href="./p/courses.html" class="block py-3 border-b border-red-800 hover:text-amber-400">Courses</a>
+            <a href="./p/shop.html" class="block py-3 border-b border-red-800 text-amber-400 hover:text-amber-400 font-bold">Shop Crystal Emporium</a>
+            <a href="#contact" class="block py-3 border-red-800 hover:text-amber-400">Contact</a>
         </div>
     </header>
 
-    <!-- Clickable Banner -->
-    <!-- <div class="w-full">
-        <a href="./p/free-tarot-webinar.html">
-            <img src="./static/promo/webinar-banner.png" alt="Free Tarot Webinar Banner"
-                class="w-full h-auto shadow-lg">
-        </a>
-    </div> -->
+    <section id="home" class="relative py-20 bg-gradient-to-b from-red-50 to-white overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <i class="fas fa-om text-9xl absolute top-10 left-10"></i>
+            <i class="fas fa-star-of-david text-9xl absolute bottom-10 right-10"></i>
+        </div>
 
-    <!-- Consultant -->
-    <section class="py-6 bg-gray-100" id="home">
-        <div class="container mx-auto px-4 flex flex-col items-center">
-            <h2 class="text-3xl font-bold text-red-700 mb-8">Meet Our Consultant</h2>
-            <img src="./static/promo/profile.jpg" alt="Mrs. Dipanwita Biswas Sur Profile Picture"
-                class="w-40 h-40 rounded-full mb-4 shadow-lg">
-            <p class="text-2xl text-red-700 mb-4">
-                Astrologer Dipanwita Biswas Sur
-                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 z-10">
+                <span
+                    class="text-red-700 font-semibold tracking-wider uppercase text-sm bg-red-100 px-3 py-1 rounded-full">Trusted
+                    by 2500+ Clients</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-6 mb-4 leading-tight">
+                    Astrological Prediction for <br><span class="text-red-800">Best Life Direction</span>
+                </h2>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Unlock the secrets of your life with <strong>Astrologer Dipanwita Biswas Sur</strong>.
+                    Combining Mathematics, Science, and Ancient Wisdom to guide you towards prosperity.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="https://wa.me/6289849972"
+                        class="px-8 py-4 bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-500 transition flex items-center justify-center gap-2 font-semibold">
+                        <i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp
+                    </a>
+                    <a href="#services"
+                        class="px-8 py-4 bg-white text-red-800 border-2 border-red-800 rounded-lg shadow hover:bg-red-50 transition font-semibold">
+                        View Services
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 flex justify-center z-10 relative">
+                <div class="absolute inset-0 bg-amber-200 blur-3xl opacity-30 rounded-full transform scale-75"></div>
+                <img src="./static/promo/profile.jpg" alt="Dipanwitaa Biswas Sur"
+                    class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-2xl relative z-20">
+                <div
+                    class="absolute -bottom-6 bg-white px-6 py-3 rounded-xl shadow-lg z-30 text-center border-l-4 border-amber-500">
+                    <p class="font-bold text-gray-800">Dipanwitaa Biswas Sur</p>
+                    <p class="text-xs text-gray-500">M.Sc (Math), Jyotish & Vastu Acharya, Grand Reiki Master</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-red-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-6 text-amber-400">Qualifications & Expertise</h3>
+            <p class="max-w-4xl mx-auto text-lg leading-relaxed opacity-90">
+                B.Sc (Math Hons) • M.Sc (Math) • B.Ed • B.Lib.Sc • Jyotish Praveena • Jyotish Acharya • Vastu Praveena •
+                Vastu Acharya • Grand Reiki Master
             </p>
-
-            <!-- Degree Tags -->
-            <p class="text-gray-800 font-bold text-center max-w-2xl mb-4">
-                B.Sc (Math Hons), M.Sc (Math), B.Ed, B.Lib.Sc, Jyotish Praveena, Jyotish Acharya, Vastu Praveena, Vastu
-                Acharya, Grand Reiki Master
-            </p>
-
-            <p class="text-gray-800 text-center text-justify max-w-2xl mb-4">
-                Astrologer Dipanwita Biswas Sur brings over 10+ years of expertise in Astrology and Vastu Consultancy.
-                As a certified tarot reader, numerologist and Grand Reiki Master, she offers a unique blend of skills to
-                her clients.
-                She is a life member of the Indian Council of Astrological Sciences (ICAS) registered in Chennai.
-                Her academic background is impressive, holding a Master of Science in Mathematics, a Bachelor of
-                Science with honours in Mathematics, a Bachelor of Education and a Bachelor of Library Science. Her
-                extensive knowledge and dedication
-                to her craft have made her a trusted consultant for those seeking guidance in life and career decisions.
-                Astrologer Sur's holistic approach integrates her academic achievements with her astrological and
-                numerological insights, providing clients with personalized and insightful advice.
-                She has two copyrights of her works in the field of Numerology and Zibu.
-            </p>
-
-            <div class="flex justify-center items-center space-x-4">
-                <a href="https://facebook.com/AstroVastuCounselling.official/"
-                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
-                    Follow Me
-                </a>
+            <div class="mt-6 flex justify-center gap-2 text-amber-500 text-xl">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section class="bg-white py-12" id="about">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-red-700 mb-4">Our Mission</h2>
-            <p class="text-gray-800 mb-4">
-                We are on a mission to provide solutions of your life problems and guide you the best life direction.
-                We predict mathematically and scientifically.
-            </p>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section class="py-12 bg-gray-100" id="services">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-red-700 mb-8">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                <!-- Service Card -->
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-star text-red-700 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Numerology Insights</h3>
-                    <p class="text-gray-800">
-                        Discover the hidden meanings of numbers and how they influence your life path. Unveil the
-                        mysteries of numerology and empower yourself with knowledge!
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-child text-red-700 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Tarot Card Reading</h3>
-                    <p class="text-gray-800">
-                        Discover insights and guidance with our expert Tarot Card Reading. Gain clarity on your life's
-                        journey and explore new possibilities!
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-gem text-red-700 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Crystal Healing</h3>
-                    <p class="text-gray-800">
-                        Experience the transformative power of crystal healing to enhance your well-being and restore
-                        balance in your life. Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-briefcase text-red-700 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Career Counseling</h3>
-                    <p class="text-gray-800">
-                        Unlock your true potential with personalized career guidance and chart your path to success!
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-heart text-red-700 text-3xl mr-4"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Match-making (Marriage)</h3>
-                    <p class="text-gray-800">
-                        Find your perfect match with our tailored match-making services — where love meets destiny!
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-life-ring text-red-700 text-3xl mr-4"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Life-related Issues</h3>
-                    <p class="text-gray-800">
-                        Navigate life's challenges with clarity and confidence — our expert guidance for life-related
-                        issues makes every decision easier.
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-calendar-alt text-red-700 text-3xl mr-4"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Birth Chart Analysis</h3>
-                    <p class="text-gray-800">
-                        Unlock the secrets of your destiny with personalized Birth Chart Analysis — your cosmic
-                        blueprint
-                        to a more enlightened life.
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-home text-red-700 text-3xl mr-4"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Vastu Consultancy</h3>
-                    <p class="text-gray-800">
-                        Unlock harmony and prosperity in your space with our expert Vastu Consultancy — where ancient
-                        wisdom meets modern living!
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <div class="flex justify-center mb-4">
-                        <i class="fas fa-phone text-red-700 text-3xl mr-4"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-red-700 mb-4">Phone Number Correction</h3>
-                    <p class="text-gray-800">
-                        Perfect your contact details with our precise Phone Number Digit Correction service — ensure
-                        you’re
-                        never out of touch!
-                        Available in both online and offline modes.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="flex justify-center items-center space-x-4">
-            <a href="tel:6289849972"
-                class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                Now</a>
-            <a href="https://wa.me/6289849972"
-                class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                Now</a>
-        </div>
-    </section>
-
-    <!-- Advertisement Section -->
-    <section class="bg-white py-12" id="about">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-red-700 mb-4">Shop From Crystal Emporium</h2>
-            <p class="text-gray-800 mb-4">
-                Discover our exquisite collection of crystals to enhance your energy and well-being. Browse through our
-                curated selection and find the perfect crystal for you.
-            </p>
-        </div>
-    </section>
-    <section class="advertisement-container-shop">
-        <div class="advertisement-wrapper">
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Amethyast-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/amethyst.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Annapurna-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/black-tourmaline.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/citrine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/clear-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/garnet.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/golden-pyrite-bracelet.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine-ganesh.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Hematite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/howlite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/kuber-kunji.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/lakshmi-yantra-pyramid.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/moonstone.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/pink-rhodonite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-carnelian.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-jasper.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rhodocrosite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rose-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/sulamani-hakik.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Tiger-eye.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/turquoise.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Amethyast-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/amethyst.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Annapurna-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/black-tourmaline.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/citrine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/clear-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/garnet.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/golden-pyrite-bracelet.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine-ganesh.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Hematite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/howlite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/kuber-kunji.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/lakshmi-yantra-pyramid.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/moonstone.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/pink-rhodonite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-carnelian.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-jasper.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rhodocrosite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rose-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/sulamani-hakik.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Tiger-eye.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/turquoise.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Amethyast-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/amethyst.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Annapurna-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/black-tourmaline.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/citrine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/clear-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/garnet.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/golden-pyrite-bracelet.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine-ganesh.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Hematite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/howlite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/kuber-kunji.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/lakshmi-yantra-pyramid.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/moonstone.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/pink-rhodonite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-carnelian.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-jasper.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rhodocrosite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rose-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/sulamani-hakik.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Tiger-eye.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/turquoise.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Amethyast-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/amethyst.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Annapurna-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/black-tourmaline.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/citrine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/clear-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/garnet.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/golden-pyrite-bracelet.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine-ganesh.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Hematite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/howlite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/kuber-kunji.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/lakshmi-yantra-pyramid.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/moonstone.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/pink-rhodonite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-carnelian.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-jasper.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rhodocrosite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rose-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/sulamani-hakik.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Tiger-eye.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/turquoise.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Amethyast-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/amethyst.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Annapurna-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/black-tourmaline.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/citrine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/clear-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/garnet.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/golden-pyrite-bracelet.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine-ganesh.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Hematite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/howlite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/kuber-kunji.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/lakshmi-yantra-pyramid.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/moonstone.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/pink-rhodonite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-carnelian.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-jasper.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rhodocrosite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rose-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/sulamani-hakik.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Tiger-eye.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/turquoise.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Amethyast-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/amethyst.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Annapurna-pyramid.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/black-tourmaline.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/citrine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/clear-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/garnet.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/golden-pyrite-bracelet.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine-ganesh.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/green-adventurine.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Hematite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/howlite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/kuber-kunji.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/lakshmi-yantra-pyramid.png" alt="Advertisement"
-                    class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/moonstone.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/pink-rhodonite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-carnelian.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/red-jasper.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rhodocrosite.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/rose-quartz.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/sulamani-hakik.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/Tiger-eye.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-            <a href="./p/shop.html" target="_blank">
-                <img src="./static/products/turquoise.png" alt="Advertisement" class="advertisement-item-shop">
-            </a>
-        </div>
-
-        <div class="flex justify-center items-center space-x-4 py-8">
-            <a href="./p/shop.html" target="_blank"
-                class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
-                Shop Now
-            </a>
-        </div>
-    </section>
-
-    <!-- Our Courses Section -->
-    <section class="bg-gray-100 py-12" id="courses">
-        <div class="container mx-auto px-4">
-            <!-- Section Heading -->
-            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Our Courses</h2>
-            <!-- Course Rows -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- First Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Tarot Card Reading</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/tarot-card/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="./static/courses/tarot-card/course2.png" alt="Course 2"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Numerology</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/numerology/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="./static/courses/numerology/course2.png" alt="Course 2"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- First Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Crystal</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/crystal/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="./static/courses/crystal/course2.png" alt="Course 2"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Vastu</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/vastu/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="./static/courses/vastu/course2.png" alt="Course 2"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- First Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Zibu Symbols</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/zibu-symbols/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Vision Board</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/vision-board/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- First Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Spell</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/spell/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Yantra</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/yantra/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- First Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Reiki</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/reiki/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="./static/courses/reiki/course2.png" alt="Course 2"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Course Set -->
-                <div>
-                    <!-- Course Heading -->
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course on Switch Words</h3>
-                    <!-- Course Posters and Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="./static/courses/switch-words/course1.png" alt="Course 1"
-                                class="w-full h-auto rounded-lg shadow-lg mb-2 hover:opacity-90 transition-opacity duration-300 mb-8">
-                            <div class="space-x-4">
-                                <a href="tel:6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                                    Now</a>
-                                <a href="https://wa.me/6289849972"
-                                    class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted Section -->
-    <section class="bg-white py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-3xl font-bold text-red-700 mb-4">Trusted by Over 2500+ Clients</h3>
-            <p class="text-gray-800 text-lg mb-4">Join a growing community that relies on our expertise for genuine and
-                reliable insights.</p>
-        </div>
-    </section>
-
-    <!-- Advertisement Section -->
-    <section class="advertisement-container">
-        <div class="advertisement-wrapper">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-            <img src="./static/promo/ad.png" alt="Advertisement" class="advertisement-item">
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="bg-white py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-red-700 mb-8">Testimonials</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                <!-- Testimonial Card -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <!-- Profile Picture -->
-                    <img src="./static/promo/testimonials/profile1.jpg" alt="Rupali Chatterjee Profile Picture"
-                        class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">
-                    <!-- Testimonial Text -->
-                    <p class="text-gray-800 mb-4">
-                        "Astro Vastu Counselling changed my life! Their insights and guidance were spot on."
-                    </p>
-                    <!-- Name and Rating -->
-                    <div class="text-center mb-4">
-                        <!-- Name -->
-                        <span class="block text-red-700 font-semibold mb-2">- Rupali Chatterjee</span>
-                        <!-- 5 Star Rating -->
-                        <div class="flex justify-center text-yellow-500">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <!-- Profile Picture -->
-                    <img src="./static/promo/testimonials/profile2.jpg" alt="Arindam Banerjee Profile Picture"
-                        class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">
-                    <!-- Testimonial Text -->
-                    <p class="text-gray-800 mb-4">
-                        "Thanks to their advice, I found peace and success in my career!"
-                    </p>
-                    <!-- Name and Rating -->
-                    <div class="text-center mb-4">
-                        <!-- Name -->
-                        <span class="block text-red-700 font-semibold mb-2">- Arindam Banerjee</span>
-                        <!-- 5 Star Rating -->
-                        <div class="flex justify-center text-yellow-500">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                    <!-- Profile Picture -->
-                    <img src="./static/promo/testimonials/profile3.jpg" alt="Madhumita Dasgupta Profile Picture"
-                        class="w-16 h-16 rounded-full mx-auto mb-4 shadow-md">
-                    <!-- Testimonial Text -->
-                    <p class="text-gray-800 mb-4">
-                        "Professional and accurate. I highly recommend their services!"
-                    </p>
-                    <!-- Name and Rating -->
-                    <div class="text-center mb-4">
-                        <!-- Name -->
-                        <span class="block text-red-700 font-semibold mb-2">- Madhumita Dasgupta</span>
-                        <!-- 5 Star Rating -->
-                        <div class="flex justify-center text-yellow-500">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600">Available both Online & Offline</p>
             </div>
 
-            <!-- New Card with Video and Text -->
-            <div
-                class="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 flex flex-col md:flex-row items-center">
-                <!-- Text Section -->
-                <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-6">
-                    <h3 class="text-3xl font-bold text-red-700 mb-4">Check What People Say About Us</h3>
-                    <p class="text-gray-800 mb-4">Discover more about our clients' experiences and how our services have
-                        made
-                        a difference in their lives. Watch the video to see real testimonials and feedback.</p>
-
-                    <!-- Contact Section -->
-                    <div class="flex justify-center items-center space-x-4">
-                        <a href="tel:6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Call
-                            Now</a>
-                        <a href="https://wa.me/6289849972"
-                            class="bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">Chat
-                            Now</a>
-                    </div>
-                </div>
-                <!-- Video Section -->
-                <div class="flex-1">
-                    <video controls class="w-full h-auto rounded-lg px-4 py-4">
-                        <source src="./static/promo/promo-video-1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <!-- Video Section -->
-                <div class="flex-1">
-                    <video controls class="w-full h-auto rounded-lg px-4 py-4">
-                        <source src="./static/promo/promo-video-2.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us -->
-    <section class="py-8 bg-gray-100" id="contact">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center">Contact Us</h2>
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <!-- Contact Information -->
-                <div class="text-left md:text-left mb-8 md:mb-0 max-w-md">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Get in Touch</h3>
-                    <p class="text-gray-700 mb-4">
-                        We are here to assist you with any inquiries or support you may need. Feel free to reach out
-                        through any of the following methods:
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fas fa-phone-alt text-red-700 mr-2"></i>
-                        Call Us: <strong>+91 6289849972</strong>
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fab fa-whatsapp text-red-700 mr-2"></i>
-                        WhatsApp: <strong>+91 6289849972</strong>
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fas fa-envelope text-red-700 mr-2"></i>
-                        Email: <strong>astrovastucounselling@gmail.com</strong>
-                    </p>
-                    <p class="text-gray-700 mb-2">
-                        <i class="fas fa-clock text-red-700 mr-2"></i>
-                        Office Hours: Mon - Sat, 10 AM - 6 PM
-                    </p>
-
-                    <!-- Visitor Counter (Added Section) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-hover group">
                     <div
-                        class="mt-8 p-5 bg-gradient-to-r from-red-700 via-red-600 to-red-500 rounded-2xl shadow-xl flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-                        <div
-                            class="bg-white rounded-full h-14 w-14 flex items-center justify-center shadow-lg mr-5 border-2 border-white">
-                            <i class="fas fa-eye text-red-700 text-2xl animate-pulse"></i>
-                        </div>
-                        <div class="text-white text-center">
-                            <p class="text-lg font-semibold tracking-wide">
-                                Total Visitors
-                                <span id="visitor-count"
-                                    class="text-2xl font-extrabold bg-white text-red-700 px-3 py-1 rounded-lg shadow-inner ml-2">Loading...</span>
-                            </p>
-                        </div>
+                        class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-800 transition duration-300">
+                        <i
+                            class="fas fa-sort-numeric-up-alt text-2xl text-red-800 group-hover:text-white transition"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Numerology Insights</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Discover the hidden meanings of numbers and
+                        how they influence your life path.</p>
+                    <a href="https://wa.me/6289849972?text=I%20am%20interested%20in%20Numerology"
+                        class="text-red-700 font-semibold text-sm hover:underline">Book Consultation &rarr;</a>
                 </div>
 
-                <!-- Map -->
-                <div class="w-full md:w-1/2 h-64 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.8642763040865!2d88.36389581477885!3d22.572646485180264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b7e351ed03%3A0xf13a2514a7916bb7!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1615348104708!5m2!1sen!2sin"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-hover group">
+                    <div
+                        class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-800 transition duration-300">
+                        <i class="fas fa-carrot text-2xl text-red-800 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Tarot Card Reading</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Gain clarity on your life's journey and
+                        explore new possibilities with Tarot.</p>
+                    <a href="https://wa.me/6289849972?text=I%20am%20interested%20in%20Tarot"
+                        class="text-red-700 font-semibold text-sm hover:underline">Book Consultation &rarr;</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-hover group">
+                    <div
+                        class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-800 transition duration-300">
+                        <i class="fas fa-gem text-2xl text-red-800 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Crystal Healing</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Enhance your well-being and restore balance
+                        using the power of crystals.</p>
+                    <a href="https://wa.me/6289849972?text=I%20am%20interested%20in%20Crystal%20Healing"
+                        class="text-red-700 font-semibold text-sm hover:underline">Book Consultation &rarr;</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-hover group">
+                    <div
+                        class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-800 transition duration-300">
+                        <i class="fas fa-home text-2xl text-red-800 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Vastu Consultancy</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Unlock harmony and prosperity in your home or
+                        office with expert Vastu tips.</p>
+                    <a href="https://wa.me/6289849972?text=I%20am%20interested%20in%20Vastu"
+                        class="text-red-700 font-semibold text-sm hover:underline">Book Consultation &rarr;</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-hover group">
+                    <div
+                        class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-800 transition duration-300">
+                        <i class="fas fa-briefcase text-2xl text-red-800 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Career Counseling</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Unlock your true potential with personalized
+                        career guidance.</p>
+                    <a href="https://wa.me/6289849972?text=I%20am%20interested%20in%20Career%20Counseling"
+                        class="text-red-700 font-semibold text-sm hover:underline">Book Consultation &rarr;</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-hover group">
+                    <div
+                        class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-800 transition duration-300">
+                        <i class="fas fa-heart text-2xl text-red-800 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Marriage Match-making</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Find your perfect match where love meets
+                        destiny.</p>
+                    <a href="https://wa.me/6289849972?text=I%20am%20interested%20in%20Match%20Making"
+                        class="text-red-700 font-semibold text-sm hover:underline">Book Consultation &rarr;</a>
                 </div>
             </div>
         </div>
-
-        <!-- Visitor Count Script -->
-        <script>
-            fetch('https://api.counterapi.dev/v2/debmalya-surs-team-1487/astrology-counter/up')
-                .then(response => response.json())
-                .then(data => {
-                    const count = data?.data?.up_count ?? 0;
-                    console.log('Visits:', count);
-                    document.getElementById('visitor-count').textContent = count.toLocaleString();
-                })
-                .catch(err => {
-                    console.error('Error fetching counter:', err);
-                    document.getElementById('visitor-count').textContent = 'Error';
-                });
-        </script>
     </section>
 
-    <button id="scrollToTopBtn" class="scroll-to-top hidden">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <section class="py-16 bg-red-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Crystal Emporium</h2>
+            <p class="text-red-100 mb-8 max-w-2xl mx-auto">Enhance your energy with our certified, energized crystals.
+                Bracelets, Pyramids, and more.</p>
 
-    <!-- Footer -->
-    <footer class="bg-red-700 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Astro Vastu Counselling. All rights reserved.</p>
-            <p>Website developed by: <a href="https://surdebmalya.co.in/" target="_blank"
-                    class="text-white underline">Debmalya Sur</a></p>
+            <div class="overflow-hidden w-full mb-8">
+                <div class="advertisement-wrapper space-x-4">
+                    <img src="./static/products/Amethyast-pyramid.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/amethyst.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/Annapurna-pyramid.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/black-tourmaline.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/citrine.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/clear-quartz.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/garnet.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/golden-pyrite-bracelet.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/green-adventurine-ganesh.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/Hematite.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/howlite.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/kuber-kunji.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/lakshmi-yantra-pyramid.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/moonstone.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/pink-rhodonite.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/red-carnelian.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/red-jasper.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/rhodocrosite.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/rose-quartz.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/sulamani-hakik.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/Tiger-eye.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                    <img src="./static/products/turquoise.png"
+                        class="h-48 w-48 object-cover rounded-xl border-2 border-amber-500 inline-block bg-white">
+                </div>
+            </div>
+
+            <a href="./p/shop.html"
+                class="inline-block px-8 py-3 bg-amber-500 text-red-900 font-bold rounded-full shadow-lg hover:bg-white hover:text-red-900 transition transform hover:scale-105">
+                Visit Shop Now
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center">
+                    <img src="./static/promo/testimonials/profile1.jpg"
+                        class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-red-200">
+                    <div class="flex justify-center text-amber-500 mb-2 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Astro Vastu Counselling changed my life! Their insights and
+                        guidance were spot on."</p>
+                    <h4 class="font-bold text-red-800">- Rupali Chatterjee</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center">
+                    <img src="./static/promo/testimonials/profile2.jpg"
+                        class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-red-200">
+                    <div class="flex justify-center text-amber-500 mb-2 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Thanks to their advice, I found peace and success in my
+                        career!"</p>
+                    <h4 class="font-bold text-red-800">- Arindam Banerjee</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center">
+                    <img src="./static/promo/testimonials/profile3.jpg"
+                        class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-red-200">
+                    <div class="flex justify-center text-amber-500 mb-2 text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Professional and accurate. I highly recommend their services!"
+                    </p>
+                    <h4 class="font-bold text-red-800">- Madhumita Dasgupta</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-10 border-t-4 border-red-800">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Astro Vastu Counselling</h4>
+                    <p class="text-sm text-gray-400">Trusted by Over 2500+ Clients. Mathematical and scientific
+                        predictions for your best life direction.</p>
+                        <div class="mt-8 p-4 bg-gray-800/40 rounded-xl border border-gray-700/50 backdrop-blur-sm w-fit">
+                        <div class="flex items-center mb-1">
+                            <span class="live-dot"></span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">Live Traffic</span>
+                        </div>
+                        <div class="flex items-baseline gap-2">
+                            <i class="fas fa-chart-line text-amber-500 text-sm"></i>
+                            <span id="visitor-count" class="text-2xl font-bold text-amber-500 count-glow font-mono">0000</span>
+                            <span class="text-xs text-gray-500 font-medium">Total Visitors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Quick Links</h4>
+                    <div class="flex flex-col space-y-2 text-sm">
+                        <a href="#home" class="hover:text-amber-500">Home</a>
+                        <a href="#services" class="hover:text-amber-500">Services</a>
+                        <a href="./p/shop.html" class="hover:text-amber-500">Shop</a>
+                        <a href="./p/courses.html" class="hover:text-amber-500">Courses</a>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <h4 class="text-white text-xl font-bold mb-4 font-serif">Contact Us</h4>
+                    <p class="text-sm"><i class="fas fa-phone mr-2 text-amber-500"></i>+91 6289849972</p>
+                    <p class="text-sm mt-2"><i
+                            class="fas fa-envelope mr-2 text-amber-500"></i>astrovastucounselling@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>© 2026 Astro Vastu Counselling. All rights reserved.</p>
+                <p>Developed by <a href="https://surdebmalya.co.in" target="_blank"
+                        class="text-amber-500 hover:underline">Debmalya Sur</a></p>
+            </div>
         </div>
     </footer>
 
+    <button id="scrollToTopBtn"
+        class="scroll-to-top hidden fixed bottom-8 right-8 w-12 h-12 rounded-full text-white shadow-lg flex items-center justify-center hover:scale-110 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const burger = document.querySelector('.navbar-burger');
-            const menu = document.querySelector('.navbar-menu');
+        // Toggle Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+        });
 
-            if (window.innerWidth <= 768) {
-                burger.addEventListener('click', function () {
-                    menu.classList.toggle('active');
-                });
+        // NEW: Close mobile menu when clicking anywhere else
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickOnButton = btn.contains(event.target);
 
-                document.addEventListener('click', function (event) {
-                    if (!menu.contains(event.target) && !burger.contains(event.target)) {
-                        menu.classList.remove('active');
-                    }
-                });
+            if (!isClickInsideMenu && !isClickOnButton) {
+                menu.classList.add('hidden');
             }
         });
 
-        // Show or hide the button based on scroll position
-        window.addEventListener('scroll', function () {
-            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.remove('hidden');
+        // NEW: Close mobile menu when clicking a link inside it
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+
+        // Scroll Top Logic
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('hidden');
             } else {
-                scrollToTopBtn.classList.add('hidden');
+                scrollBtn.classList.add('hidden');
             }
         });
-
-        // Scroll to top when the button is clicked
-        document.getElementById('scrollToTopBtn').addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>
 
+        // Visitor Count Script
+        fetch('https://api.counterapi.dev/v2/debmalya-surs-team-1487/astrology-counter/up')
+            .then(response => response.json())
+            .then(data => {
+                const count = data?.data?.up_count ?? 0;
+                document.getElementById('visitor-count').textContent = count.toLocaleString();
+            })
+            .catch(err => {
+                console.error('Error fetching counter:', err);
+                document.getElementById('visitor-count').textContent = 'Error';
+            });
+    </script>
 </body>
 
 </html>
