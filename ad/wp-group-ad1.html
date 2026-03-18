@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Exclusive WhatsApp Group</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a202c;
+            color: #f7fafc;
+        }
+
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f59e0b;
+        }
+
+        .premium-gold-cta {
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 36%),
+                linear-gradient(135deg, #6b4710 0%, #b8871b 24%, #f6d472 52%, #d79c1f 78%, #8a5f12 100%);
+            color: #fff7e6;
+            border: 1px solid rgba(255, 223, 148, 0.34);
+            box-shadow:
+                0 20px 42px rgba(0, 0, 0, 0.34),
+                0 10px 24px rgba(215, 156, 31, 0.2),
+                inset 0 1px 0 rgba(255, 248, 220, 0.52),
+                inset 0 -1px 0 rgba(97, 65, 8, 0.28);
+            letter-spacing: 0.01em;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        }
+
+        .premium-gold-cta:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.04) saturate(1.06);
+            box-shadow:
+                0 24px 48px rgba(0, 0, 0, 0.38),
+                0 14px 30px rgba(215, 156, 31, 0.28),
+                inset 0 1px 0 rgba(255, 248, 220, 0.58),
+                inset 0 -1px 0 rgba(97, 65, 8, 0.24);
+        }
+
+        .premium-gold-cta:active {
+            transform: translateY(0);
+        }
+
+        .whatsapp-icon-wrap {
+            width: 2rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background: rgba(20, 83, 45, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .whatsapp-icon {
+            width: 1.1rem;
+            height: 1.1rem;
+            flex-shrink: 0;
+            color: #25d366;
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+    <!-- Navbar -->
+    <header class="bg-gray-900 py-4 shadow-lg fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-4 flex justify-center items-center">
+            <!-- Join Button -->
+            <a href="./wp-group-ad1-redirection.html" class="px-8 py-4 premium-gold-cta rounded-xl font-bold text-lg inline-flex items-center gap-3">
+                এখনই গ্রুপে যুক্ত হোন
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-28 py-10 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">আমাদের এক্সক্লুসিভ WhatsApp কমিউনিটিতে যোগ দিন</h2>
+            <a href="./wp-group-ad1-redirection.html">
+                <img src="./wp-group-ad1.png" alt="Join Our Exclusive WhatsApp Community" class="mx-auto rounded-lg shadow-lg mb-6">
+            </a>
+            <p class="text-lg md:text-xl font-semibold text-yellow-300 mb-4">প্রতিদিন সঠিক দিশা পেতে আজই যুক্ত হন আমাদের এক্সক্লুসিভ WhatsApp গ্রুপে</p>
+            <p class="text-base md:text-lg text-gray-200 mb-6">যারা জীবনের গুরুত্বপূর্ণ সিদ্ধান্তে জ্যোতিষের নির্ভরযোগ্য গাইডেন্স চান, তাদের জন্যই এই বিশেষ কমিউনিটি।</p>
+            <ul class="text-left text-lg space-y-4 mb-6 max-w-xl mx-auto">
+                <li>🌟 প্রতিদিনের রাশিফল ও শুভ সময়</li>
+                <li>🌟 কাজ, টাকা, সম্পর্ক ও স্বাস্থ্যের দরকারি গাইডেন্স</li>
+                <li>🌟 সহজ জ্যোতিষ টিপস ও কার্যকর রেমেডি</li>
+                <li>🌟 গুরুত্বপূর্ণ দিনগুলোর আগে বিশেষ আপডেট</li>
+            </ul>
+            <p class="text-lg font-semibold text-white mb-2">2500+ সন্তুষ্ট মানুষ ইতিমধ্যেই উপকৃত</p>
+            <p class="text-lg font-semibold text-yellow-200 mb-6">বিশ্বাস, ফলাফল ও নিয়মিত গাইডেন্সের জন্য আমাদের উপর আস্থা রাখুন</p>
+
+            <!-- Countdown Timer -->
+            <div class="countdown mb-6" id="countdown">আজকের বিশেষ সুযোগ শেষ হতে বাকি: 01:00:00</div>
+
+            <script>
+                // Countdown Timer Script
+                const countdownElement = document.getElementById('countdown');
+                let time = 3600; // 1 hour in seconds
+
+                const updateCountdown = () => {
+                    const minutes = Math.floor(time / 60);
+                    const seconds = time % 60;
+                    countdownElement.textContent = `আজকের বিশেষ সুযোগ শেষ হতে বাকি: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    time--;
+
+                    if (time < 0) {
+                        countdownElement.textContent = "আজকের অফার শেষ হয়েছে!";
+                    }
+                };
+
+                setInterval(updateCountdown, 1000);
+            </script>
+
+            <!-- Join Button -->
+            <a href="./wp-group-ad1-redirection.html" class="px-8 py-4 premium-gold-cta rounded-xl font-bold text-lg inline-flex items-center gap-3">
+                এখনই গ্রুপে যুক্ত হোন
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>

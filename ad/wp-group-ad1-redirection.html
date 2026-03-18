@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to WhatsApp Group</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(circle at top, rgba(245, 158, 11, 0.18), transparent 32%),
+                linear-gradient(180deg, #111827 0%, #1f2937 100%);
+            color: #f7fafc;
+            min-height: 100vh;
+        }
+
+        .premium-gold-cta {
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 36%),
+                linear-gradient(135deg, #6b4710 0%, #b8871b 24%, #f6d472 52%, #d79c1f 78%, #8a5f12 100%);
+            color: #fff7e6;
+            border: 1px solid rgba(255, 223, 148, 0.34);
+            box-shadow:
+                0 20px 42px rgba(0, 0, 0, 0.34),
+                0 10px 24px rgba(215, 156, 31, 0.2),
+                inset 0 1px 0 rgba(255, 248, 220, 0.52),
+                inset 0 -1px 0 rgba(97, 65, 8, 0.28);
+            letter-spacing: 0.01em;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        }
+
+        .premium-gold-cta:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.04) saturate(1.06);
+        }
+
+        .redirect-card {
+            background: rgba(17, 24, 39, 0.82);
+            border: 1px solid rgba(255, 223, 148, 0.18);
+            box-shadow:
+                0 24px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+        }
+
+        .count-circle {
+            width: 7rem;
+            height: 7rem;
+            border-radius: 9999px;
+            background: radial-gradient(circle at 30% 30%, #f6d472, #b8871b 60%, #6b4710 100%);
+            color: #111827;
+            box-shadow:
+                0 18px 40px rgba(215, 156, 31, 0.25),
+                inset 0 2px 10px rgba(255, 255, 255, 0.35);
+        }
+
+        .status-text {
+            color: #f59e0b;
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+    <header class="bg-gray-900 py-4 shadow-lg fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-4 flex justify-center items-center">
+            <a href="https://chat.whatsapp.com/IFNyximpXju36JxNAVEoup?mode=hq1tcla" class="px-8 py-4 premium-gold-cta rounded-xl font-bold text-lg inline-flex items-center gap-3">
+                WhatsApp গ্রুপে যান
+            </a>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex items-center justify-center px-4 pt-28 pb-10">
+        <div class="redirect-card w-full max-w-2xl rounded-3xl p-8 md:p-12 text-center">
+            <p class="text-sm uppercase tracking-widest text-yellow-300 mb-3">Secure Redirect</p>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">আপনাকে WhatsApp গ্রুপে নেওয়া হচ্ছে</h1>
+            <p class="text-base md:text-lg text-gray-300 max-w-xl mx-auto mb-8">
+                অনুগ্রহ করে কয়েক সেকেন্ড অপেক্ষা করুন। স্বয়ংক্রিয়ভাবে আপনার WhatsApp গ্রুপ লিংকে রিডাইরেক্ট করা হবে।
+            </p>
+
+            <div class="count-circle mx-auto flex items-center justify-center text-5xl font-extrabold mb-6" id="countdown">
+                3
+            </div>
+
+            <p class="status-text text-lg font-semibold mb-8" id="statusText">৩ সেকেন্ডের মধ্যে রিডাইরেক্ট করা হবে...</p>
+
+            <a href="https://chat.whatsapp.com/IFNyximpXju36JxNAVEoup?mode=hq1tcla" class="px-8 py-4 premium-gold-cta rounded-xl font-bold text-lg inline-flex items-center gap-3">
+                এখনই ম্যানুয়ালি প্রবেশ করুন
+            </a>
+        </div>
+    </main>
+
+    <script>
+        const targetUrl = "https://chat.whatsapp.com/IFNyximpXju36JxNAVEoup?mode=hq1tcla";
+        const countdownElement = document.getElementById("countdown");
+        const statusText = document.getElementById("statusText");
+        let timeLeft = 3;
+
+        const tick = () => {
+            countdownElement.textContent = timeLeft;
+            statusText.textContent = `${timeLeft} সেকেন্ডের মধ্যে রিডাইরেক্ট করা হবে...`;
+
+            if (timeLeft === 0) {
+                statusText.textContent = "এখন আপনাকে WhatsApp গ্রুপে নেওয়া হচ্ছে...";
+                window.location.href = targetUrl;
+                return;
+            }
+
+            timeLeft -= 1;
+            setTimeout(tick, 1000);
+        };
+
+        tick();
+    </script>
+</body>
+
+</html>
