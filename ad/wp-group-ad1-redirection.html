@@ -21,10 +21,7 @@
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '943544844991164');
-        fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=943544844991164&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
     <style>
         body {
@@ -83,6 +80,9 @@
 </head>
 
 <body class="text-gray-100">
+    <script>
+        fbq('trackCustom', 'redirection-page-view');
+    </script>
     <header class="bg-gray-900 py-4 shadow-lg fixed top-0 left-0 w-full z-50">
         <div class="container mx-auto px-4 flex justify-center items-center">
             <a href="https://chat.whatsapp.com/IFNyximpXju36JxNAVEoup?mode=hq1tcla" class="px-8 py-4 premium-gold-cta rounded-xl font-bold text-lg inline-flex items-center gap-3">
@@ -115,7 +115,7 @@
         const targetUrl = "https://chat.whatsapp.com/IFNyximpXju36JxNAVEoup?mode=hq1tcla";
         const countdownElement = document.getElementById("countdown");
         const statusText = document.getElementById("statusText");
-        let timeLeft = 3;
+        let timeLeft = 2;
 
         const tick = () => {
             countdownElement.textContent = timeLeft;
