@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Downloading PDF | Astro Vastu Counselling</title>
+    <link rel="icon" href="../static/promo/logo.jpg" type="image/jpeg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(245, 158, 11, 0.16), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(127, 29, 29, 0.12), transparent 24%),
+                linear-gradient(180deg, #fdf8f6 0%, #fff 100%);
+            color: #374151;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(245, 158, 11, 0.16);
+            box-shadow: 0 24px 60px rgba(69, 10, 10, 0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+            box-shadow: 0 14px 30px rgba(127, 29, 29, 0.25);
+        }
+    </style>
+</head>
+
+<body class="antialiased flex items-center justify-center px-6">
+    <main class="card w-full max-w-xl rounded-3xl p-8 md:p-10 text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-red-700">Preparing Download</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">Your PDF is downloading</h1>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+            If the download does not start automatically in a few seconds, use the button below.
+        </p>
+
+        <a id="downloadLink"
+            class="cta inline-flex items-center justify-center mt-8 rounded-2xl px-6 py-4 text-white font-semibold text-lg"
+            href="#">
+            Download PDF
+        </a>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const file = params.get("file");
+        const filename = params.get("filename") || "Sample-PDF.pdf";
+        const downloadLink = document.getElementById("downloadLink");
+
+        if (!file) {
+            downloadLink.textContent = "PDF link missing";
+            downloadLink.removeAttribute("href");
+        } else {
+            downloadLink.href = file;
+            downloadLink.setAttribute("download", filename);
+
+            window.addEventListener("load", () => {
+                setTimeout(() => {
+                    downloadLink.click();
+                }, 300);
+            });
+        }
+    </script>
+</body>
+
+</html>
