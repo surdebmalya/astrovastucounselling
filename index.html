@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astro Vastu Counselling | Guide to a Better Life</title>
     <link rel="icon" href="./static/promo/logo.jpg" type="image/jpeg" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -57,6 +57,60 @@
             display: inline-block;
             white-space: nowrap;
             animation: scroll-left 20s linear infinite;
+        }
+
+        .pattern-cubes {
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+        }
+
+        .live-traffic-panel {
+            background-color: rgba(31, 41, 55, 0.4);
+            border-color: rgba(55, 65, 81, 0.5);
+        }
+
+        .text-10px {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        .tracking-02em {
+            letter-spacing: 0.2em;
+        }
+
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+
+        .text-amber-400 {
+            color: #fbbf24;
+        }
+
+        .text-amber-500 {
+            color: #f59e0b;
+        }
+
+        .bg-amber-200 {
+            background-color: #fde68a;
+        }
+
+        .bg-amber-500 {
+            background-color: #f59e0b;
+        }
+
+        .border-amber-500 {
+            border-color: #f59e0b;
+        }
+
+        .hover\:text-amber-400:hover {
+            color: #fbbf24;
+        }
+
+        .hover\:text-amber-500:hover {
+            color: #f59e0b;
+        }
+
+        .hover\:bg-amber-400:hover {
+            background-color: #fbbf24;
         }
 
         @keyframes scroll-left {
@@ -342,7 +396,7 @@
         </div>
     </section>
     <section class="py-16 bg-red-900 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        <div class="absolute inset-0 opacity-10 pattern-cubes">
         </div>
         <div class="container mx-auto px-6 text-center relative z-10">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -467,10 +521,10 @@
                         Trusted by Over 2500+ Clients. Mathematical and scientific
                         predictions for your best life direction.
                     </p>
-                    <div class="mt-8 p-4 bg-gray-800/40 rounded-xl border border-gray-700/50 backdrop-blur-sm w-fit">
+                    <div class="mt-8 p-4 live-traffic-panel rounded-xl border backdrop-blur-sm w-fit">
                         <div class="flex items-center mb-1">
                             <span class="live-dot"></span>
-                            <span class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">Live
+                            <span class="text-10px uppercase tracking-02em text-gray-500 font-bold">Live
                                 Traffic</span>
                         </div>
                         <div class="flex items-baseline gap-2">

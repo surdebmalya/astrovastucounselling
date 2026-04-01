@@ -18,6 +18,7 @@
         body {
             font-family: "Poppins", sans-serif;
             background-color: #fdf8f6;
+            overflow-x: hidden;
         }
 
         h1,
@@ -45,6 +46,24 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        .page-shell,
+        .policy-content {
+            min-width: 0;
+        }
+
+        .policy-copy {
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .tracking-02em {
+            letter-spacing: 0.2em;
+        }
+
+        .section-icon {
+            flex: 0 0 3rem;
         }
     </style>
 </head>
@@ -113,7 +132,7 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
                 <span
-                    class="inline-flex items-center rounded-full bg-red-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-red-700">Important
+                    class="inline-flex items-center rounded-full bg-red-100 px-4 py-1 text-xs font-semibold uppercase tracking-02em text-red-700">Important
                     Information</span>
                 <h2 class="mt-6 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                     Terms & <span class="text-red-800">Policies</span>
@@ -129,8 +148,8 @@
 
     <section class="py-14 md:py-20">
         <div class="container mx-auto px-6">
-            <div class="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
-                <aside class="policy-card rounded-3xl p-6 h-fit lg:sticky lg:top-28 shadow-lg">
+            <div class="page-shell grid gap-8 lg:grid-cols-12">
+                <aside class="policy-card rounded-3xl p-6 h-fit lg:col-span-4 xl:col-span-3 lg:sticky lg:top-28 shadow-lg">
                     <h3 class="text-2xl font-bold text-red-900 mb-5">On This Page</h3>
                     <nav class="space-y-3 text-sm">
                         <a href="#terms" class="block rounded-xl bg-red-50 px-4 py-3 font-medium text-red-800">Terms
@@ -152,15 +171,15 @@
                     </nav>
                 </aside>
 
-                <div class="space-y-8">
+                <div class="policy-content space-y-8 lg:col-span-8 xl:col-span-9">
                     <section id="terms" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
                                 <i class="fas fa-file-contract text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Terms of Use</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>By accessing this website, booking a consultation, joining a course, or placing a
                                 product enquiry, you agree to follow these terms and all applicable laws.</p>
                             <p>All content on this website, including design, text, images, course information, and
@@ -173,12 +192,12 @@
 
                     <section id="privacy" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
                                 <i class="fas fa-user-shield text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Privacy Policy</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>We may collect your name, phone number, email address, birth details, consultation
                                 preferences, shipping details, and other information you voluntarily share with us.</p>
                             <p>This information is used to respond to your enquiries, provide consultations, process
@@ -193,12 +212,12 @@
 
                     <section id="consultations" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
                                 <i class="fas fa-comments text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Consultation Policy</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>Consultations are offered online and offline, subject to availability and appointment
                                 confirmation.</p>
                             <p>Clients are responsible for sharing correct birth details, personal information, and
@@ -211,12 +230,12 @@
 
                     <section id="courses" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
                                 <i class="fas fa-graduation-cap text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Course Policy</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>Course structure, timing, and content may be updated from time to time to improve the
                                 learning experience.</p>
                             <p>Enrollment is confirmed only after mutual communication and applicable payment
@@ -229,12 +248,12 @@
 
                     <section id="orders" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
                                 <i class="fas fa-shopping-bag text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Shop & Order Policy</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>Products displayed on the shop page are offered subject to availability. Final order
                                 confirmation may happen over WhatsApp, phone, or another direct channel.</p>
                             <p>Product images are for presentation purposes. Natural crystals and spiritual items may
@@ -248,12 +267,12 @@
 
                     <section id="refunds" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
                                 <i class="fas fa-undo-alt text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Refunds & Cancellations</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>Consultation and course fees are generally non-refundable once the appointment or seat is
                                 confirmed, unless otherwise agreed in writing.</p>
                             <p>If a session must be rescheduled from our side, we will coordinate a new suitable time.
@@ -268,12 +287,12 @@
 
                     <section id="disclaimer" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-800">
                                 <i class="fas fa-exclamation-circle text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Disclaimer</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>Astrology, vastu, crystal, tarot, reiki, and related spiritual services are interpretive
                                 in nature. Results can vary from person to person based on circumstances, effort, and
                                 personal belief.</p>
@@ -285,12 +304,12 @@
 
                     <section id="contact-info" class="policy-card rounded-3xl p-8 md:p-10 shadow-lg scroll-mt-28">
                         <div class="flex items-center gap-4 mb-5">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <div class="section-icon flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
                                 <i class="fas fa-headset text-xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-gray-900">Contact for Policy Queries</h3>
                         </div>
-                        <div class="space-y-4 text-sm md:text-base leading-8 text-gray-600">
+                        <div class="policy-copy space-y-4 text-sm md:text-base leading-8 text-gray-600">
                             <p>If you have questions about these terms or policies, please contact us before booking a
                                 service or confirming an order.</p>
                             <div class="rounded-2xl bg-red-50 p-5 text-gray-700">
