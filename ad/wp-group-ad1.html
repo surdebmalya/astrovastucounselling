@@ -29,6 +29,15 @@
     </div></section>
   </main>
   <aside class="sticky-join" aria-label="WhatsApp গ্রুপে যোগ দেওয়ার সুযোগ"><div class="sticky-join__inner"><div class="countdown" id="countdown" aria-live="polite"><span class="countdown-label">আজকের বিশেষ সুযোগ শেষ হতে বাকি: </span><span>০১:০০:০০</span></div><a href="./wp-group-ad1-redirection.html" class="cta" data-track="daily-rashifol-whatsapp-group-join-click">এখনই গ্রুপে যুক্ত হোন</a></div></aside>
+  <aside class="offer-widget" aria-label="Premium Group offer">
+    <button class="offer-launcher" id="offerLauncher" type="button" aria-controls="offerCard" aria-expanded="false"><span class="offer-launcher__dot" aria-hidden="true"></span>Premium Group</button>
+    <section class="offer-card" id="offerCard" role="dialog" aria-labelledby="offerTitle" hidden>
+      <div class="offer-card__top"><div><p class="offer-card__eyebrow">আজকের বিশেষ সুযোগ</p><h2 class="offer-card__title" id="offerTitle">Premium Group এ join করুন</h2></div><button class="offer-card__close" id="offerClose" type="button" aria-label="অফারটি বন্ধ করুন">×</button></div>
+      <p class="offer-card__copy">সীমিত সময়ের জন্য প্রযোজ্য। প্রতিদিনের প্রয়োজনীয় জ্যোতিষ গাইডেন্স পেতে আজই যুক্ত হোন।</p>
+      <a class="cta" href="./wp-group-ad1-redirection.html" data-track="premium-group-floating-click">Click Here</a>
+      <small class="offer-card__note">সীমিত সময়ের জন্য প্রযোজ্য</small>
+    </section>
+  </aside>
   <script>
     document.querySelectorAll('.video-trigger').forEach(button => button.addEventListener('click', () => {
       const video = document.createElement('video');
@@ -47,6 +56,26 @@
     };
     updateCountdown();
 
+    const offerLauncher = document.getElementById('offerLauncher');
+    const offerCard = document.getElementById('offerCard');
+    const offerClose = document.getElementById('offerClose');
+    const setOfferOpen = isOpen => {
+      offerCard.hidden = !isOpen;
+      offerLauncher.hidden = isOpen;
+      document.body.classList.toggle('offer-open', isOpen);
+      offerLauncher.setAttribute('aria-expanded', String(isOpen));
+    };
+    offerLauncher.addEventListener('click', () => setOfferOpen(true));
+    offerClose.addEventListener('click', () => { setOfferOpen(false); offerLauncher.focus(); });
+    document.addEventListener('click', event => {
+      if (!offerCard.hidden && !offerCard.contains(event.target)) {
+        setOfferOpen(false);
+        offerLauncher.focus();
+      }
+    });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && !offerCard.hidden) { setOfferOpen(false); offerLauncher.focus(); } });
+    setTimeout(() => setOfferOpen(true), 3000);
+
     const loadMetaPixel = () => {
       if (window.fbq) return;
       !function(f,b,e,v,n,t,s){n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -57,9 +86,8 @@
       window.fbq('trackCustom', 'landing-page-view');
       document.querySelectorAll('[data-track]').forEach(link => link.addEventListener('click', () => window.fbq('trackCustom', link.dataset.track)));
     };
-    const scheduleTracking = () => setTimeout(startTracking, 800);
-    if (document.readyState === 'complete') scheduleTracking();
-    else window.addEventListener('load', scheduleTracking, { once: true });
+    // This script runs after the page markup, so tracking can start without waiting for every image to load.
+    setTimeout(startTracking, 300);
   </script>
 </body>
 </html>

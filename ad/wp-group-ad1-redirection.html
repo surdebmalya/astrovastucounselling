@@ -7,9 +7,35 @@
 <body class="redirect-page">
   <main class="redirect-card"><p class="eyebrow">এক্সক্লুসিভ কমিউনিটি</p><h1>আপনাকে WhatsApp গ্রুপে নেওয়া হচ্ছে</h1><p>এক মুহূর্তের মধ্যে আপনার WhatsApp গ্রুপের লিংক খোলা হবে।</p><div class="count-circle" id="countdown" aria-live="polite">১</div><p class="redirect-status" id="statusText">WhatsApp খোলা হচ্ছে…</p><a class="cta" href="https://chat.whatsapp.com/HIDw105W2rJ8NkzP3wzl5n">এখনই WhatsApp গ্রুপে যান</a><p>স্বয়ংক্রিয়ভাবে না খুললে উপরের বাটনটি চাপুন।</p></main>
   <script>
-    const targetUrl='https://chat.whatsapp.com/HIDw105W2rJ8NkzP3wzl5n';
-    setTimeout(()=>{document.getElementById('countdown').textContent='০';document.getElementById('statusText').textContent='এখন আপনাকে WhatsApp গ্রুপে নেওয়া হচ্ছে…';window.location.replace(targetUrl);},1200);
-    setTimeout(()=>{!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1467019555437463');fbq('trackCustom','redirection-page-view-for-daily-rashifol-whatsapp-group-joining');},0);
+    const targetUrl = 'https://chat.whatsapp.com/HIDw105W2rJ8NkzP3wzl5n';
+    let hasRedirected = false;
+    const redirectToWhatsApp = () => {
+      if (hasRedirected) return;
+      hasRedirected = true;
+      document.getElementById('countdown').textContent = '০';
+      document.getElementById('statusText').textContent = 'এখন আপনাকে WhatsApp গ্রুপে নেওয়া হচ্ছে…';
+      window.location.replace(targetUrl);
+    };
+
+    const pixelScript = document.createElement('script');
+    pixelScript.async = true;
+    pixelScript.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    const pixelQueue = function () {
+      pixelQueue.callMethod ? pixelQueue.callMethod.apply(pixelQueue, arguments) : pixelQueue.queue.push(arguments);
+    };
+    pixelQueue.queue = [];
+    pixelQueue.push = pixelQueue;
+    pixelQueue.loaded = true;
+    pixelQueue.version = '2.0';
+    window.fbq = pixelQueue;
+    window._fbq = pixelQueue;
+    window.fbq('init', '1467019555437463');
+    window.fbq('trackCustom', 'redirection-page-view-for-daily-rashifol-whatsapp-group-joining');
+    pixelScript.addEventListener('load', () => setTimeout(redirectToWhatsApp, 150), { once: true });
+    document.head.appendChild(pixelScript);
+
+    // Keep the handoff fast even when Meta is blocked or slow to respond.
+    setTimeout(redirectToWhatsApp, 900);
   </script>
 </body>
 </html>
