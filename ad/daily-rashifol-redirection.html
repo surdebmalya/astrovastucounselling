@@ -5,9 +5,10 @@
   <title>WhatsApp গ্রুপ খোলা হচ্ছে</title><link rel="stylesheet" href="./assets/landing.css">
 </head>
 <body class="redirect-page">
-  <main class="redirect-card"><p class="eyebrow">এক্সক্লুসিভ কমিউনিটি</p><h1>আপনাকে WhatsApp গ্রুপে নেওয়া হচ্ছে</h1><p>এক মুহূর্তের মধ্যে আপনার WhatsApp গ্রুপের লিংক খোলা হবে।</p><div class="count-circle" id="countdown" aria-live="polite">১</div><p class="redirect-status" id="statusText">WhatsApp খোলা হচ্ছে…</p><a class="cta" href="https://chat.whatsapp.com/HIDw105W2rJ8NkzP3wzl5n">এখনই WhatsApp গ্রুপে যান</a><p>স্বয়ংক্রিয়ভাবে না খুললে উপরের বাটনটি চাপুন।</p></main>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1782023296409415&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
+  <main class="redirect-card"><p class="eyebrow">এক্সক্লুসিভ কমিউনিটি</p><h1>আপনাকে WhatsApp গ্রুপে নেওয়া হচ্ছে</h1><p>এক মুহূর্তের মধ্যে আপনার WhatsApp গ্রুপের লিংক খোলা হবে।</p><div class="count-circle" id="countdown" aria-live="polite">১</div><p class="redirect-status" id="statusText">WhatsApp খোলা হচ্ছে…</p><a class="cta" href="https://chat.whatsapp.com/IFNyximpXju36JxNAVEoup?s=cl&p=a&iam=2">এখনই WhatsApp গ্রুপে যান</a><p>স্বয়ংক্রিয়ভাবে না খুললে উপরের বাটনটি চাপুন।</p></main>
   <script>
-    const targetUrl = 'https://chat.whatsapp.com/HIDw105W2rJ8NkzP3wzl5n';
+    const targetUrl = 'https://chat.whatsapp.com/IFNyximpXju36JxNAVEoup?s=cl&p=a&iam=2';
     let hasRedirected = false;
     const redirectToWhatsApp = () => {
       if (hasRedirected) return;
@@ -29,7 +30,8 @@
     pixelQueue.version = '2.0';
     window.fbq = pixelQueue;
     window._fbq = pixelQueue;
-    window.fbq('init', '1467019555437463');
+    window.fbq('init', '1782023296409415');
+    window.fbq('track', 'PageView');
     window.fbq('trackCustom', 'redirection-page-view-for-daily-rashifol-whatsapp-group-joining');
     pixelScript.addEventListener('load', () => setTimeout(redirectToWhatsApp, 150), { once: true });
     document.head.appendChild(pixelScript);
