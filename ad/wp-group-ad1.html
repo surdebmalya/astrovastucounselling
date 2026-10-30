@@ -68,7 +68,7 @@
     offerLauncher.addEventListener('click', () => setOfferOpen(true));
     offerClose.addEventListener('click', () => { setOfferOpen(false); offerLauncher.focus(); });
     document.addEventListener('click', event => {
-      if (!offerCard.hidden && !offerCard.contains(event.target)) {
+      if (!offerCard.hidden && !offerCard.contains(event.target) && !offerLauncher.contains(event.target)) {
         setOfferOpen(false);
         offerLauncher.focus();
       }
