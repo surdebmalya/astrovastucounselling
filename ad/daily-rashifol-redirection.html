@@ -33,11 +33,12 @@
     window.fbq('init', '1782023296409415');
     window.fbq('track', 'PageView');
     window.fbq('trackCustom', 'redirection-page-view-for-daily-rashifol-whatsapp-group-joining');
-    pixelScript.addEventListener('load', () => setTimeout(redirectToWhatsApp, 150), { once: true });
+    // Give Meta time to transmit the queued PageView and custom event before navigation.
+    pixelScript.addEventListener('load', () => setTimeout(redirectToWhatsApp, 850), { once: true });
     document.head.appendChild(pixelScript);
 
-    // Keep the handoff fast even when Meta is blocked or slow to respond.
-    setTimeout(redirectToWhatsApp, 900);
+    // Do not leave a visitor waiting if Meta is blocked or unusually slow.
+    setTimeout(redirectToWhatsApp, 2000);
   </script>
 </body>
 </html>
