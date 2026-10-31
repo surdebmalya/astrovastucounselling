@@ -32,7 +32,11 @@
     window._fbq = pixelQueue;
     window.fbq('init', '1782023296409415');
     window.fbq('track', 'PageView');
-    window.fbq('trackCustom', 'redirection-page-view-for-daily-rashifol-whatsapp-group-joining');
+    window.fbq('trackCustom', 'DailyRashifolWhatsAppRedirect', {
+      event_label: 'redirection-page-view-for-daily-rashifol-whatsapp-group-joining',
+      source_page: 'daily-rashifol-redirection',
+      destination: 'whatsapp'
+    });
     // Give Meta time to transmit the queued PageView and custom event before navigation.
     pixelScript.addEventListener('load', () => setTimeout(redirectToWhatsApp, 850), { once: true });
     document.head.appendChild(pixelScript);
